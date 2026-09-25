@@ -1,1 +1,694 @@
-<!DOCTYPE html> <html lang="en"> <head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Line Upon Line — Creative Decor, Kits &amp; Workshops</title>  <!-- Premium Web Font Integrations -->  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@4 00;500;600;700&family=Libre+Baskerville:ital,wght@1,400&family=Poppins:wght@500;600&display=swa p" rel="stylesheet">  <style>    :root {      /* Official Line Upon Line Brand Color Architecture */      --peach: #F5DDCF;      --rose: #A87570;      --cloud: #EFEAE6;      --mist: #D0C9B8;      --gravel: #998979;      --pebble: #C4AF9A;      --sky: #CDD6D8;      --ocean: #66767B;      --forest: #5D6751;      --white: #FFFFFF;    }    /* Core Reset & Screen Reader Accessibility Protocol */    * { box-sizing: border-box; margin: 0; padding: 0; }    body {      background-color: var(--cloud);      color: var(--gravel);      font-family: 'Darker Grotesque', sans-serif;      font-size: 21px;      line-height: 1.5;      -webkit-font-smoothing: antialiased;    }    /* Strict Font Mapping Hierarchy */    h1, .title-font {      font-family: 'Bellefair', serif;      font-weight: 400;      color: var(--gravel);    }    h2, h3, h4, .heading-font {      font-family: 'Garamond', 'Garamond Premier Pro', serif;    }      font-weight: 600;      color: var(--rose);    .cta-font, nav a, button, .select-dropdown {      font-family: 'Poppins', sans-serif;      font-weight: 500;      text-transform: uppercase;      letter-spacing: 0.06em;      font-size: 0.85rem;    }    em, i, .editorial-italic {      font-family: 'Libre Baskerville', serif;      font-style: italic;    }    /* Skip Link for Screen Readers */    .skip-link {      position: absolute;      top: -100px;      left: 0;      background: var(--rose);      color: var(--white);      padding: 12px;      z-index: 200;      text-decoration: none;    }    .skip-link:focus { top: 0; }    /* Accessible Interactive Outlines */    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible {      outline: 3px solid var(--ocean);      outline-offset: 2px;    }    .wrap {      max-width: 1280px;      margin: 0 auto;      padding: 0 24px;    }    /* Announcement Bar */    .announcement {      background-color: var(--pebble);      color: var(--white);      text-align: center;      padding: 10px 0;      font-size: 0.85rem;    }    /* Sticky Navigation Architecture */    header {      background: var(--white);      border-bottom: 1px solid var(--mist);      position: sticky;      top: 0;      z-index: 100;    }    .nav-container {      display: flex;      justify-content: space-between;    }      align-items: center;      padding: 16px 0;    /* Brand Logo Anchor Layout Configurations */    .logo-img-anchor {      display: flex;      align-items: center;      text-decoration: none;    }    .brand-logo-img {      height: 55px;      width: auto;      display: block;      object-fit: contain;    }    nav ul {      display: flex;      list-style: none;      gap: 28px;    }    nav a {      color: var(--gravel);      text-decoration: none;      padding-bottom: 4px;      border-bottom: 2px solid transparent;      transition: all 0.2s ease;    }    nav a:hover, nav a.active {      color: var(--rose);      border-bottom-color: var(--rose);    }    /* Interactive Menu Trigger for Mobile ADA Compliance */    .menu-toggle {      display: none;      background: none;      border: none;      color: var(--gravel);      font-size: 1.5rem;      cursor: pointer;    }    /* Header & Layout Filters Hub */    .hero-section {      text-align: center;      padding: 60px 0 20px;    }    .hero-section h1 {      font-size: 3.5rem;      margin-bottom: 10px;    }    .utility-control-bar {      display: flex;      justify-content: space-between;      align-items: center;      background: var(--white);      border: 1px solid var(--mist);      padding: 16px 24px;      border-radius: 6px;      margin-bottom: 32px;    }    .dropdown-cluster {      display: flex;      gap: 16px;    }    .select-dropdown {      background: var(--cloud);      border: 1px solid var(--mist);      color: var(--gravel);      padding: 10px 16px;      border-radius: 4px;      cursor: pointer;      text-transform: none;    }    /* Main Grid & Filtering Columns Split */    .catalog-layout {      display: grid;      grid-template-columns: 260px 1fr;      gap: 40px;      margin-bottom: 80px;    }    .filter-drawer-sidebar h3 {      font-size: 1.2rem;      margin-bottom: 14px;      color: var(--ocean);      border-bottom: 1px solid var(--mist);      padding-bottom: 6px;    }    .filter-group-block {      margin-bottom: 32px;    }    .filter-item-row {      display: flex;      align-items: center;      gap: 12px;      margin-bottom: 10px;      cursor: pointer;      font-size: 1.05rem;    }    .filter-item-row input {      width: 18px;      height: 18px;      accent-color: var(--rose);    }    /* Matrix Product Card Designs */    .product-showcase-grid {      display: grid;      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));      gap: 32px;    }    .product-card {      background: var(--white);      border: 1px solid var(--mist);      border-radius: 6px;      overflow: hidden;      display: flex;      flex-direction: column;      transition: transform 0.2s ease, box-shadow 0.2s ease;    }    .product-card:hover {      transform: translateY(-4px);      box-shadow: 0 12px 20px rgba(153, 137, 121, 0.1);    }    .product-img-wrapper {      width: 100%;      height: 320px;      background: var(--mist);      overflow: hidden;    }    .product-img-wrapper img {      width: 100%;      height: 100%;      object-fit: cover;    }    .product-meta-content {      padding: 24px;      text-align: center;      flex-grow: 1;      display: flex;      flex-direction: column;      justify-content: space-between;    }    .product-meta-content h2 {      font-size: 1.4rem;      color: var(--gravel);      margin-bottom: 8px;      font-family: 'Darker Grotesque', sans-serif;      font-weight: 600;    }    .product-price-label {      font-size: 1.2rem;      color: var(--rose);      font-weight: 700;      margin-bottom: 16px;    }    .btn-action {      background: var(--ocean);      color: var(--white);      border: none;      padding: 12px;      width: 100%;      border-radius: 4px;      cursor: pointer;      transition: background 0.2s ease;    }    .btn-action:hover {    }      background: var(--forest);    /* UI Module: Interactive Workshop Booking Grid */    .workshop-scheduler-section {      background: var(--white);      border: 1px solid var(--mist);      border-radius: 8px;      padding: 48px 32px;      margin-bottom: 80px;    }    .scheduler-header {      text-align: center;      margin-bottom: 36px;    }    .scheduler-header h2 {      font-size: 2.4rem;      color: var(--rose);      margin-bottom: 8px;    }    .calendar-matrix-grid {      display: grid;      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));      gap: 24px;    }    .calendar-event-card {      background: var(--cloud);      border-left: 4px solid var(--rose);      padding: 24px;      border-radius: 0 6px 6px 0;      display: flex;      flex-direction: column;      justify-content: space-between;    }    .event-date-badge {      color: var(--forest);      font-size: 0.9rem;      font-weight: bold;      margin-bottom: 6px;    }    .calendar-event-card h3 {      font-size: 1.5rem;      color: var(--gravel);      margin-bottom: 12px;    }    .event-meta-info {      font-size: 1rem;      margin-bottom: 16px;      color: var(--gravel);    }    .btn-secondary {      background: transparent;      border: 2px solid var(--ocean);      color: var(--ocean);      padding: 10px;      border-radius: 4px;      cursor: pointer;      width: 100%;      transition: all 0.2s ease;    }    .btn-secondary:hover {      background: var(--ocean);      color: var(--white);    }    /* SEO Component: Editorial Project Blog Page Array */    .editorial-blog-container {      margin-bottom: 80px;    }    .blog-header-title {      text-align: center;      font-size: 2.4rem;      margin-bottom: 40px;    }    .editorial-columns-grid {      display: grid;      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));      gap: 32px;    }    .editorial-story-card {      background: var(--white);      border: 1px solid var(--mist);      border-radius: 6px;      overflow: hidden;    }    .editorial-story-card .img-frame {      height: 220px;      background: var(--mist);    }    .editorial-story-card .img-frame img {      width: 100%;      height: 100%;      object-fit: cover;    }    .story-body {      padding: 24px;    }    .story-body h3 {      font-size: 1.6rem;      color: var(--gravel);      margin-bottom: 10px;      line-height: 1.3;    }    .story-body p {      font-size: 1.05rem;      margin-bottom: 16px;    }    .story-link {      color: var(--rose);      text-decoration: none;      font-weight: bold;    }    .story-link:hover {      text-decoration: underline;    }    /* Footer Brand Area */    footer {      background-color: var(--forest);      color: var(--cloud);      padding: 64px 0 32px;    }    .footer-columns {      display: grid;      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));      gap: 40px;      border-bottom: 1px solid var(--gravel);      padding-bottom: 40px;      margin-bottom: 32px;    }    .footer-column-box h4 {      color: var(--peach);      margin-bottom: 16px;    }    .footer-column-box ul { list-style: none; }    .footer-column-box li { margin-bottom: 10px; }    .footer-column-box a { color: var(--cloud); text-decoration: none; font-size: 1rem; }    .footer-column-box a:hover { color: var(--peach); }    /* Mobile Responsive Logic Layout overrides */    @media (max-width: 1024px) {      .catalog-layout { grid-template-columns: 1fr; }      .filter-drawer-sidebar { display: none; }    }    @media (max-width: 768px) {      nav ul { display: none; }      .menu-toggle { display: block; }      .utility-control-bar { flex-direction: column; gap: 16px; align-items: stretch; }    }  </style> </head> <body>  <a href="#main-catalog-hub" class="skip-link">Skip to main shopping shopping catalog</a>  <div class="announcement cta-font" role="region" aria-label="Global Store Banner">    Free Shipping on Regional Orders — Handcrafted Tiered Decor &amp; Creative Workshops  </div>  <header>    <div class="wrap nav-container">      <a href="#" class="logo-img-anchor" aria-label="Line Upon Line Home Base">        <img src="Line Upon Line-13.png" alt="Line Upon Line Company Logo" class="brand-logo-img">      </a>      <nav aria-label="Desktop Top Level Navigation Matrix">        <ul>          <li><a href="#" class="active">Shop All</a></li>          <li><a href="#">About Us</a></li>          <li><a href="#">Workshops</a></li>          <li><a href="#">The Makery Box</a></li>          <li><a href="#">Hangin' On The Door</a></li>          <li><a href="#">The Print Shop</a></li>          <li><a href="#">Gift Cards</a></li>        </ul>      </nav>      <button class="menu-toggle" aria-label="Open Navigation Directory Menu" aria-expanded="fa lse">&#9776;</button>    </div>  </header>  <main class="wrap" id="main-catalog-hub">    <div class="hero-section">      <h1 class="title-font">Shop All</h1>    </div>    <div class="utility-control-bar">      <div class="dropdown-cluster">        <select class="select-dropdown" aria-label="Quick Filter Categorization">          <option>Filter By: All Products</option>          <option>Door Hangers</option>          <option>Tiered Tray Sets</option>          <option>Seasonal Craft Elements</option>        </select>        <select class="select-dropdown" aria-label="Sort configuration sequencing">          <option>Sort By: Date, new to old</option>          <option>Price: Low to High</option>          <option>Price: High to Low</option>          <option>Best Selling Items</option>        </select>      </div>      <div class="cta-font" style="color: var(--gravel);">3 Curated Core Master Assets Displaye d</div>    </div>    <div class="catalog-layout">      <aside class="filter-drawer-sidebar" aria-label="Catalog refinement filters">        <div class="filter-group-block">          <h3>Product Category</h3>          <label class="filter-item-row"><input type="checkbox"> 3D Door Decor</label>          <label class="filter-item-row"><input type="checkbox"> Tiered Tray Configurations</label>          <label class="filter-item-row"><input type="checkbox"> Finished Local Crafts</label>          <label class="filter-item-row"><input type="checkbox"> DIY Unfinished Blanks</label>        </div>        <div class="filter-group-block">          <h3>Seasonal Theme</h3>          <label class="filter-item-row"><input type="checkbox"> Spring &amp; Easter Collection s</label> label>          <label class="filter-item-row"><input type="checkbox"> Harvest &amp; Autumn Accents</          <label class="filter-item-row"><input type="checkbox"> Winter &amp; Holiday Greens</label>          <label class="filter-item-row"><input type="checkbox"> Year-Round Studio Staples</label>        </div>      </aside>      <section class="product-showcase-grid" aria-label="Current Inventory View">        <article class="product-card">          <div class="product-img-wrapper">            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format& fit=crop&q=80&w=600" alt="Chubby 3D Easter Bunny decor cutting placeholder">          </div>          <div class="product-meta-content">            <h2>Chubby 3D Easter Bunny</h2>            <div class="product-price-label">£28.00</div>            <button class="btn-action cta-font">Select Product Options</button>          </div>        </article>        <article class="product-card">          <div class="product-img-wrapper">            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit =crop&q=80&w=600" alt="Layered festive display tier tray complete accent arrangement kit">          </div>          <div class="product-meta-content">            <h2>Easter Tiered Tray Set</h2>            <div class="product-price-label">£34.00</div>            <button class="btn-action cta-font">Select Product Options</button>          </div>        </article>        <article class="product-card">          <div class="product-img-wrapper">            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format& fit=crop&q=80&w=600" alt="Artisan decorative hand painted door hanger craft cutout display">          </div>          <div class="product-meta-content">            <h2>Bubble Gum Machine Door Hanger</h2>            <div class="product-price-label">£42.00</div>            <button class="btn-action cta-font">Select Product Options</button>          </div>        </article>      </section>    </div>    <section class="workshop-scheduler-section" aria-label="Studio Workshops Calendar">      <div class="scheduler-header">        <h2>Join Us in the Studio</h2>        <p class="editorial-italic" style="font-size: 1.2rem; color: var(--gravel);">Reserve yo ur seat for our next hands-on creative crafting circle.</p>      </div>      <div class="calendar-matrix-grid">        <div class="calendar-event-card">          <div>            <div class="event-date-badge">Saturday, October 10 — 10:00 AM</div>            <h3>3D Door Hanger Painting Painting Masterclass</h3>            <div class="event-meta-info">All materials, paint blanks, and matching bows provide d on site.</div>          </div>          <button class="btn-secondary cta-font">Book Workshop Seat</button>        </div>        <div class="calendar-event-card">          <div>            <div class="event-date-badge">Thursday, October 22 — 6:30 PM</div>            <h3>Tiered Tray Seasonal Layering Circle</h3>            <div class="event-meta-info">Learn color grouping balances using our new Autumn min i signs collection.</div>          </div>          <button class="btn-secondary cta-font">Book Workshop Seat</button>        </div>      </div>    </section>    <section class="editorial-blog-container" aria-label="Creative Journal Articles Portfolio">      <h2 class="title-font blog-header-title">From the Makery Journal</h2>      <div class="editorial-columns-grid">        <article class="editorial-story-card">          <div class="img-frame">            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format& fit=crop&q=80&w=600" alt="Beautiful styling of porch door hangers layout">          </div>          <div class="story-body">            <h3>How to Style Your Front Porch for the Changing Seasons</h3>            <p>Practical design concepts for pairing statement door decor with functional accen t textures to build a warm entry statement.</p>            <a href="#" class="story-link cta-font">Read Project Essay &rarr;</a>          </div>        </article>        <article class="editorial-story-card">          <div class="img-frame">            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit =crop&q=80&w=600" alt="Creative workstation paint tray overview">          </div>          <div class="story-body">            <h3>3 Essential Painting Techniques for Crisp 3D Wood Blanks</h3>            <p>Mastering color transitions, blending wood tones, and preventing bleed lines on raw laser-cut shapes at home.</p>            <a href="#" class="story-link cta-font">Read Project Essay &rarr;</a>          </div>        </article>      </div>    </section>  </main>  <footer>    <div class="wrap">      <div class="footer-columns">        <div class="footer-column-box">          <h4 class="cta-font">Line Upon Line</h4>          <p style="font-size: 1rem; max-width: 28ch;">Handcrafted decor pieces, workshop serie s, and unique seasonal items items designed for inspired homes.</p>        </div>        <div class="footer-column-box">          <h4 class="cta-font">Studio Resources</h4>          <ul>            <li><a href="#">Accessibility Compliance Register</a></li>            <li><a href="#">Workshop Safety &amp; Cancellation Policies</a></li>            <li><a href="#">Custom Project Inquiry Sheets</a></li>          </ul>        </div>      </div>      <p style="font-size: 0.85rem; text-align: center; color: var(--pebble);">        &copy; 2026 Line Upon Line Home Studio. Verified Accessible, Modern Boutique Retail Fra mework.      </p>    </div>  </footer> </body> </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Upon Line — Creative Decor, Kits &amp; Workshops</title>
+  
+  <!-- Premium Web Font Integrations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Official Line Upon Line Brand Color Architecture */
+      --peach: #F5DDCF;
+      --rose: #A87570;
+      --cloud: #EFEAE6;
+      --mist: #D0C9B8;
+      --gravel: #998979;
+      --pebble: #C4AF9A;
+      --sky: #CDD6D8;
+      --ocean: #66767B;
+      --forest: #5D6751;
+      --white: #FFFFFF;
+    }
+
+    /* Core Reset & Screen Reader Accessibility Protocol */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--cloud); /* Tone-on-Tone Grounded Background */
+      color: var(--gravel);
+      font-family: 'Darker Grotesque', sans-serif; /* Paragraph Font */
+      font-size: 21px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Strict Font Mapping Hierarchy */
+    h1, .title-font {
+      font-family: 'Bellefair', serif; /* Title Font */
+      font-weight: 400;
+      color: var(--gravel);
+    }
+
+    h2, h3, h4, .heading-font {
+      font-family: 'Garamond', 'Garamond Premier Pro', serif; /* Heading Font */
+      font-weight: 600;
+      color: var(--rose);
+    }
+
+    .cta-font, nav a, button, .select-dropdown, .search-input {
+      font-family: 'Poppins', sans-serif; /* Menu / Call To Action Font */
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.85rem;
+    }
+
+    em, i, .editorial-italic {
+      font-family: 'Libre Baskerville', serif; /* Italics Font */
+      font-style: italic;
+    }
+
+    /* Skip Link for Screen Readers */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--rose);
+      color: var(--white);
+      padding: 12px;
+      z-index: 200;
+      text-decoration: none;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Accessible Interactive Outlines */
+    a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible {
+      outline: 3px solid var(--ocean);
+      outline-offset: 2px;
+    }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Announcement Bar */
+    .announcement {
+      background-color: var(--pebble);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.85rem;
+    }
+
+    /* Sticky Navigation Architecture */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--mist);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 20px;
+    }
+
+    /* Brand Logo Layout Configurations - Rebuilt for High Visibility */
+    .logo-img-anchor {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 65px; /* Enhanced vertical scale height */
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Integrated Global Search Bar Component */
+    .search-container {
+      flex-grow: 1;
+      max-width: 320px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 16px;
+      border: 1px solid var(--mist);
+      border-radius: 4px;
+      background-color: var(--cloud);
+      color: var(--gravel);
+      text-transform: none;
+      font-size: 0.9rem;
+    }
+
+    /* Primary Links Array Menu layout matrixes */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--gravel);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--rose);
+      border-bottom-color: var(--rose);
+    }
+
+    /* Interactive Menu Trigger for Mobile ADA Compliance */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gravel);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Header & Layout Filters Hub */
+    .hero-section {
+      text-align: center;
+      padding: 60px 0 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    .utility-control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--mist);
+      padding: 16px 24px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+    }
+
+    .dropdown-cluster {
+      display: flex;
+      gap: 16px;
+    }
+
+    .select-dropdown {
+      background: var(--cloud);
+      border: 1px solid var(--mist);
+      color: var(--gravel);
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: none;
+    }
+
+    /* Main Grid & Filtering Columns Split */
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .filter-drawer-sidebar h3 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      color: var(--ocean);
+      border-bottom: 1px solid var(--mist);
+      padding-bottom: 6px;
+    }
+
+    .filter-group-block {
+      margin-bottom: 32px;
+    }
+
+    .filter-item-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    .filter-item-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--rose);
+    }
+
+    /* Matrix Product Card Designs */
+    .product-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px rgba(153, 137, 121, 0.1);
+    }
+
+    .product-img-wrapper {
+      width: 100%;
+      height: 320px;
+      background: var(--mist);
+      overflow: hidden;
+    }
+
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-meta-content {
+      padding: 24px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-meta-content h2 {
+      font-size: 1.4rem;
+      color: var(--gravel);
+      margin-bottom: 8px;
+      font-family: 'Darker Grotesque', sans-serif;
+      font-weight: 600;
+    }
+
+    .product-price-label {
+      font-size: 1.2rem;
+      color: var(--rose);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .btn-action {
+      background: var(--ocean);
+      color: var(--white);
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--forest);
+    }
+
+    /* UI Module: Workshop Booking Calendar Configuration */
+    .workshop-scheduler-section {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      padding: 48px 32px;
+      margin-bottom: 80px;
+    }
+
+    .scheduler-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .scheduler-header h2 {
+      font-size: 2.4rem;
+      color: var(--rose);
+      margin-bottom: 8px;
+    }
+
+    .calendar-matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .calendar-event-card {
+      background: var(--cloud);
+      border-left: 4px solid var(--rose);
+      padding: 24px;
+      border-radius: 0 6px 6px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-date-badge {
+      color: var(--forest);
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .calendar-event-card h3 {
+      font-size: 1.5rem;
+      color: var(--gravel);
+      margin-bottom: 12px;
+    }
+
+    .event-meta-info {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--gravel);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--ocean);
+      color: var(--ocean);
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--ocean);
+      color: var(--white);
+    }
+
+    /* SEO Component: Editorial Project Blog Layout Grid */
+    .editorial-blog-container {
+      margin-bottom: 80px;
+    }
+
+    .blog-header-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+    }
+
+    .editorial-columns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+    }
+
+    .editorial-story-card {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .editorial-story-card .img-frame {
+      height: 220px;
+      background: var(--mist);
+    }
+
+    .editorial-story-card .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-body {
+      padding: 24px;
+    }
+
+    .story-body h3 {
+      font-size: 1.6rem;
+      color: var(--gravel);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .story-body p {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .story-link {
+      color: var(--rose);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .story-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Brand Area Layout rules */
+    footer {
+      background-color: var(--forest);
+      color: var(--cloud);
+      padding: 64px 0 32px;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      border-bottom: 1px solid var(--gravel);
+      padding-bottom: 40px;
+      margin-bottom: 32px;
+    }
+
+    .footer-column-box h4 {
+      color: var(--peach);
+      margin-bottom: 16px;
+    }
+
+    .footer-column-box ul { list-style: none; }
+    .footer-column-box li { margin-bottom: 10px; }
+    .footer-column-box a { color: var(--cloud); text-decoration: none; font-size: 1rem; }
+    .footer-column-box a:hover { color: var(--peach); }
+
+    /* Responsive Logic Fluid Layout Breakpoints */
+    @media (max-width: 1024px) {
+      .nav-container { flex-wrap: wrap; }
+      .search-container { order: 3; max-width: 100%; flex-basis: 100%; }
+      .catalog-layout { grid-template-columns: 1fr; }
+      .filter-drawer-sidebar { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .menu-toggle { display: block; order: 2; }
+      .logo-img-anchor { order: 1; }
+      .brand-logo-img { height: 45px; } /* Clean, balanced scaling for mobile navigation heights */
+      .utility-control-bar { flex-direction: column; gap: 16px; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-catalog-hub" class="skip-link">Skip to main shopping catalog</a>
+
+  <div class="announcement cta-font" role="region" aria-label="Global Store Banner">
+    Free Shipping on Regional Orders — Handcrafted Tiered Decor &amp; Creative Workshops
+  </div>
+
+  <header>
+    <div class="wrap nav-container">
+      <a href="#" class="logo-img-anchor" aria-label="Line Upon Line Home Base">
+        <img src="Line Upon Line-13.png" alt="Line Upon Line Home &amp; Craft Studio Logo" class="brand-logo-img">
+      </a>
+      
+      <div class="search-container">
+        <input type="search" placeholder="Search handcrafted decor..." class="search-input" aria-label="Search the catalog">
+      </div>
+      
+      <nav aria-label="Desktop Top Level Navigation Matrix">
+        <ul>
+          <li><a href="#" class="active">Shop All</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Workshops</a></li>
+          <li><a href="#">The Makery Box</a></li>
+          <li><a href="#">Hangin' On The Door</a></li>
+          <li><a href="#">The Print Shop</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Open Navigation Directory Menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <main class="wrap" id="main-catalog-hub">
+    <div class="hero-section">
+      <h1 class="title-font">Shop All</h1>
+    </div>
+
+    <div class="utility-control-bar">
+      <div class="dropdown-cluster">
+        <select class="select-dropdown" aria-label="Quick Filter Categorization">
+          <option>Filter By: All Products</option>
+          <option>Door Hangers</option>
+          <option>Tiered Tray Sets</option>
+          <option>Seasonal Craft Elements</option>
+        </select>
+        
+        <select class="select-dropdown" aria-label="Sort configuration sequencing">
+          <option>Sort By: Date, new to old</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Best Selling Items</option>
+        </select>
+      </div>
+      <div class="cta-font" style="color: var(--gravel);">3 Curated Core Master Assets Displayed</div>
+    </div>
+
+    <div class="catalog-layout">
+      <aside class="filter-drawer-sidebar" aria-label="Catalog refinement filters">
+        <div class="filter-group-block">
+          <h3>Product Category</h3>
+          <label class="filter-item-row"><input type="checkbox"> 3D Door Decor</label>
+          <label class="filter-item-row"><input type="checkbox"> Tiered Tray Configurations</label>
+          <label class="filter-item-row"><input type="checkbox"> Finished Local Crafts</label>
+          <label class="filter-item-row"><input type="checkbox"> DIY Unfinished Blanks</label>
+        </div>
+        <div class="filter-group-block">
+          <h3>Seasonal Theme</h3>
+          <label class="filter-item-row"><input type="checkbox"> Spring &amp; Easter Collections</label>
+          <label class="filter-item-row"><input type="checkbox"> Harvest &amp; Autumn Accents</label>
+          <label class="filter-item-row"><input type="checkbox"> Winter &amp; Holiday Greens</label>
+          <label class="filter-item-row"><input type="checkbox"> Year-Round Studio Staples</label>
+        </div>
+      </aside>
+
+      <section class="product-showcase-grid" aria-label="Current Inventory View">
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Chubby 3D Easter Bunny table center cutout craft piece">
+          </div>
+          <div class="product-meta-content">
+            <h2>Chubby 3D Easter Bunny</h2>
+            <div class="product-price-label">£28.00</div>
+            <button class="btn-action cta-font">Select Product Options</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&q=80&w=600" alt="Layered festive display tier tray complete accent arrangement kit with miniature spring signs">
+          </div>
+          <div class="product-meta-content">
+            <h2>Easter Tiered Tray Set</h2>
+            <div class="product-price-label">£34.00</div>
+            <button class="btn-action cta-font">Select Product Options</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Artisan decorative laser-cut wood bubble gum machine hanging door hanger art layout">
+          </div>
+          <div class="product-meta-content">
+            <h2>Bubble Gum Machine Door Hanger</h2>
+            <div class="product-price-label">£42.00</div>
+            <button class="btn-action cta-font">Select Product Options</button>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="workshop-scheduler-section" aria-label="Studio Workshops Calendar">
+      <div class="scheduler-header">
+        <h2>Join Us in the Studio</h2>
+        <p class="editorial-italic" style="font-size: 1.2rem; color: var(--gravel);">Reserve your seat for our next hands-on creative crafting circle.</p>
+      </div>
+
+      <div class="calendar-matrix-grid">
+        <div class="calendar-event-card">
+          <div>
+            <div class="event-date-badge">Saturday, October 10 — 10:00 AM</div>
+            <h3>3D Door Hanger Painting Masterclass</h3>
+            <div class="event-meta-info">All materials, paint blanks, and matching bows provided on site.</div>
+          </div>
+          <button class="btn-secondary cta-font">Book Workshop Seat</button>
+        </div>
+
+        <div class="calendar-event-card">
+          <div>
+            <div class="event-date-badge">Thursday, October 22 — 6:30 PM</div>
+            <h3>Tiered Tray Seasonal Layering Circle</h3>
+            <div class="event-meta-info">Learn color grouping balances using our new Autumn mini signs collection.</div>
+          </div>
+          <button class="btn-secondary cta-font">Book Workshop Seat</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial-blog-container" aria-label="Creative Journal Articles Portfolio">
+      <h2 class="title-font blog-header-title">From the Makery Journal</h2>
+      
+      <div class="editorial-columns-grid">
+        <article class="editorial-story-card">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=600" alt="Beautiful styling of porch door hangers layout pairing raw linens with custom painted woods">
+          </div>
+          <div class="story-body">
+            <h3>How to Style Your Front Porch for the Changing Seasons</h3>
+            <p>Practical design concepts for pairing statement door decor with functional accent textures to build a warm entry statement.</p>
+            <a href="#" class="story-link cta-font">Read Project Essay &rarr;</a>
+          </div>
+        </article>
+
+        <article class="editorial-story-card">
+          <div class="img-frame">
+            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&q=80&w=600" alt="Creative workstation paint trays and brushes setting overview">
+          </div>
+          <div class="story-body">
+            <h3>3 Essential Painting Techniques for Crisp 3D Wood Blanks</h3>
+            <p>Mastering color transitions, blending wood tones, and preventing bleed lines on raw laser-cut shapes at home.</p>
+            <a href="#" class="story-link cta-font">Read Project Essay &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-columns">
+        <div class="footer-column-box">
+          <h4 class="cta-font">Line Upon Line</h4>
+          <p style="font-size: 1rem; max-width: 28ch;">Handcrafted decor pieces, workshop series, and unique seasonal items designed for inspired homes.</p>
+        </div>
+        <div class="footer-column-box">
+          <h4 class="cta-font">Studio Resources</h4>
+          <ul>
+            <li><a href="#">Accessibility Compliance Register</a></li>
+            <li><a href="#">Workshop Safety &amp; Cancellation Policies</a></li>
+            <li><a href="#">Custom Project Inquiry Sheets</a></li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size: 0.85rem; text-align: center; color: var(--pebble); margin-top: 24px; border-top: 1px solid var(--gravel); padding-top: 24px;">
+        &copy; 2026 Line Upon Line Home Studio. Verified Accessible, Modern Boutique Retail Framework.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
