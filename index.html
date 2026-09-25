@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Faith-Based Storefront Concept</title>
+  
+  <!-- Typography & Accessible Icons -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --ink: #111827;
+      --paper: #FAF9F5;
+      --brass: #926C34;
+      --charcoal: #4B5563;
+      --border: #E5E7EB;
+      --focus-ring: #2563EB;
+    }
+
+    /* Core Accessibility Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--paper);
+      color: var(--charcoal);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Skip to content link for screen readers */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      background: var(--ink);
+      color: white;
+      padding: 10px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Focus States for Accessibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 2px;
+    }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Masthead Navigation */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      border-bottom-color: var(--brass);
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: #EFECE3;
+      padding: 80px 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2.8rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 60ch;
+      margin: 0 auto 24px;
+      font-size: 1.15rem;
+    }
+
+    /* Storefront Layout (Anti-Overwhelm Filtering System) */
+    .store-container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      padding: 60px 0;
+    }
+
+    /* Sidebar Filters */
+    .filters {
+      background: #fff;
+      padding: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      height: fit-content;
+    }
+
+    .filter-group {
+      margin-bottom: 24px;
+    }
+
+    .filter-group h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .filter-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .filter-label input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--brass);
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    }
+
+    .product-image-placeholder {
+      background: #E5E7EB;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9CA3AF;
+      font-style: italic;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .product-price {
+      color: var(--brass);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--ink);
+      color: #fff;
+      padding: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: var(--brass);
+    }
+
+    /* SEO Editorial Blog Section */
+    .blog-section {
+      background: #fff;
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Source Serif 4', serif;
+      font-size: 2rem;
+      color: var(--ink);
+      margin-bottom: 40px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .blog-card h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.3rem;
+      margin: 12px 0 8px;
+      color: var(--ink);
+    }
+
+    .blog-card p {
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .blog-link {
+      color: var(--brass);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--ink);
+      color: #9CA3AF;
+      padding: 48px 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+      border-bottom: 1px solid #374151;
+      padding-bottom: 32px;
+      margin-bottom: 32px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: #9CA3AF;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .store-container { grid-template-columns: 1fr; }
+      .filters { display: none; /* In production code, this turns into a dynamic drawer */ }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    Free standard shipping on orders over £75 — Pure, traditional craftsmanship
+  </div>
+
+  <header>
+    <div class="wrap header-main">
+      <a href="#" class="logo" aria-label="Brand Home">Grace &amp; Legacy</a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">The Heritage Collection</a></li>
+          <li><a href="#">Home &amp; Sanctuary</a></li>
+          <li><a href="#">Our Story</a></li>
+        </ul>
+      </nav>
+      <div>
+        <!-- Human-designed interface elements placeholder -->
+        <button class="btn" style="padding: 8px 16px;" aria-label="View Shopping Cart">Cart (0)</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <section class="hero">
+      <div class="wrap">
+        <h1>Thoughtfully Made Products for Intentional Living</h1>
+        <p>Explore an environment curated to highlight quality materials and purposeful design. Free from automated algorithms, built entirely by human hands.</p>
+      </div>
+    </section>
+
+    <div class="wrap store-container">
+      
+      <!-- Anti-Overwhelm Filtering System Layout -->
+      <aside class="filters" aria-label="Product Filters">
+        <div class="filter-group">
+          <h3>Collection</h3>
+          <label class="filter-label"><input type="checkbox"> Daily Devotional Items</label>
+          <label class="filter-label"><input type="checkbox"> Handcrafted Textiles</label>
+          <label class="filter-label"><input type="checkbox"> Solid Oak Accents</label>
+        </div>
+        <div class="filter-group">
+          <h3>Material</h3>
+          <label class="filter-label"><input type="checkbox"> Full-Grain Leather</label>
+          <label class="filter-label"><input type="checkbox"> Heritage Linen</label>
+          <label class="filter-label"><input type="checkbox"> Reclaimed Wood</label>
+        </div>
+      </aside>
+
+      <!-- Clean Showcase Grid -->
+      <section class="product-grid" aria-label="Products">
+        
+        <article class="product-card">
+          <div class="product-image-placeholder" aria-hidden="true">[ Image: Heritage Leather Bound Journal ]</div>
+          <div class="product-info">
+            <h2 class="product-title">The Heritage Leather Bound Journal</h2>
+            <div class="product-price">£48.00</div>
+            <button class="btn">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image-placeholder" aria-hidden="true">[ Image: Belgian Linen Table Runner ]</div>
+          <div class="product-info">
+            <h2 class="product-title">Belgian Linen Table Runner</h2>
+            <div class="product-price">£65.00</div>
+            <button class="btn">Add to Cart</button>
+          </div>
