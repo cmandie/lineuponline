@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Line Upon Line — Creative Decor, Kits &amp; Workshops</title>
   
-  <!-- Premium Web Font Integrations (Exact Match to Brand Spec) -->
+  <!-- Premium Web Font Integrations -->
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -29,9 +29,9 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      background-color: var(--cloud); /* Tone-on-Tone Grounded Background */
+      background-color: var(--cloud);
       color: var(--gravel);
-      font-family: 'Darker Grotesque', sans-serif; /* Paragraph Font */
+      font-family: 'Darker Grotesque', sans-serif;
       font-size: 21px;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -39,19 +39,19 @@
 
     /* Strict Font Mapping Hierarchy */
     h1, .title-font {
-      font-family: 'Bellefair', serif; /* Title Font */
+      font-family: 'Bellefair', serif;
       font-weight: 400;
       color: var(--gravel);
     }
 
     h2, h3, h4, .heading-font {
-      font-family: 'Garamond', 'Garamond Premier Pro', serif; /* Heading Font */
+      font-family: 'Garamond', 'Garamond Premier Pro', serif;
       font-weight: 600;
       color: var(--rose);
     }
 
     .cta-font, nav a, button, .select-dropdown {
-      font-family: 'Poppins', sans-serif; /* Menu / Call To Action Font */
+      font-family: 'Poppins', sans-serif;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -59,7 +59,7 @@
     }
 
     em, i, .editorial-italic {
-      font-family: 'Libre Baskerville', serif; /* Italics Font */
+      font-family: 'Libre Baskerville', serif;
       font-style: italic;
     }
 
@@ -121,10 +121,10 @@
     }
 
     .brand-logo-img {
-      height: 55px;        /* Keeps the navigation bar clean and aligned */
-      width: auto;         /* Prevents horizontal distortion or stretching */
+      height: 55px;
+      width: auto;
       display: block;
-      object-fit: contain; /* Ensures the graphic scales correctly */
+      object-fit: contain;
     }
 
     nav ul {
@@ -190,7 +190,6 @@
       padding: 10px 16px;
       border-radius: 4px;
       cursor: pointer;
-      text-transform: none;
     }
 
     /* Main Grid & Filtering Columns Split */
@@ -431,3 +430,19 @@
     }
 
     .story-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer Brand Area */
+    footer {
+      background-color: var(--forest);
+      color: var(--cloud);
+      padding: 64px 0 32px;
+    }
+
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      border-bottom: 1px solid var(--gravel);
+      padding-bottom: 40px;
