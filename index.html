@@ -113,10 +113,18 @@
       padding: 16px 0;
     }
 
-    .logo-link img {
-      height: 54px;
-      width: auto;
+    /* Brand Logo Anchor Layout Configurations */
+    .logo-img-anchor {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 55px;        /* Keeps the navigation bar clean and aligned */
+      width: auto;         /* Prevents horizontal distortion or stretching */
       display: block;
+      object-fit: contain; /* Ensures the graphic scales correctly */
     }
 
     nav ul {
@@ -423,18 +431,3 @@
     }
 
     .story-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer Brand Area */
-    footer {
-      background-color: var(--forest);
-      color: var(--cloud);
-      padding: 64px 0 32px;
-    }
-
-    .footer-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 40px;
-      border-bottom: 1px solid var(--gravel);
