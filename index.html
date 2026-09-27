@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line Upon Line — Creative Decor, Kits & Workshops</title>
+  <title>Line Upon Line — Shop All</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,6 @@
       --mist: #D0C9B8;
       --gravel: #998979;
       --pebble: #C4AF9A;
-      --sky: #CDD6D8;
       --ocean: #66767B;
       --forest: #5D6751;
       --white: #FFFFFF;
@@ -30,7 +29,7 @@
       background-color: var(--cloud);
       color: var(--gravel);
       font-family: 'Darker Grotesque', sans-serif;
-      font-size: 21px;
+      font-size: 20px;
       line-height: 1.5;
     }
 
@@ -52,9 +51,9 @@
       justify-content: space-between;
     }
 
-    /* SMALL LOGO SECTION — INSERT YOUR IMAGE NAME HERE */
+    /* SMALL LOGO */
     .brand-logo-img {
-      height: 40px;   /* small logo */
+      height: 40px;
       width: auto;
       object-fit: contain;
     }
@@ -95,6 +94,34 @@
       max-width: 1280px;
       margin: auto;
       padding: 0 20px;
+    }
+
+    /* FILTER BAR */
+    .utility-control-bar {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .dropdown-cluster {
+      display: flex;
+      gap: 16px;
+    }
+
+    .select-dropdown {
+      background: var(--cloud);
+      border: 1px solid var(--mist);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
     }
 
     /* PRODUCT GRID */
@@ -196,6 +223,19 @@
       object-fit: cover;
     }
 
+    /* FOOTER */
+    footer {
+      background: var(--forest);
+      color: var(--cloud);
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
     /* MOBILE FIXES */
     @media (max-width: 768px) {
       nav ul {
@@ -220,7 +260,7 @@
   <div class="nav-container">
     <a href="#">
       <!-- INSERT YOUR LOGO FILE NAME HERE -->
-      <img src="LineUponLine13.png" class="brand-logo-img" alt="Line Upon Line Logo">
+      <img src="YOUR-LOGO.png" class="brand-logo-img" alt="Line Upon Line Logo">
     </a>
 
     <button class="menu-toggle">&#9776;</button>
@@ -231,6 +271,7 @@
         <li><a href="#">Workshops</a></li>
         <li><a href="#">Makery Box</a></li>
         <li><a href="#">Print Shop</a></li>
+        <li><a href="#">Gift Cards</a></li>
       </ul>
     </nav>
   </div>
@@ -240,8 +281,30 @@
 
   <h1 style="text-align:center; margin:40px 0;">Shop All</h1>
 
+  <!-- FILTER BAR -->
+  <div class="utility-control-bar">
+    <div class="dropdown-cluster">
+      <select class="select-dropdown">
+        <option>Filter By: All Products</option>
+        <option>Door Hangers</option>
+        <option>Tiered Tray Sets</option>
+        <option>Seasonal Items</option>
+      </select>
+
+      <select class="select-dropdown">
+        <option>Sort By: Newest</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Best Selling</option>
+      </select>
+    </div>
+
+    <div style="font-family:Poppins;">3 Products Displayed</div>
+  </div>
+
+  <!-- PRODUCT GRID -->
   <section class="product-showcase-grid">
-    <!-- PRODUCT 1 -->
+
     <article class="product-card">
       <div class="product-img-wrapper">
         <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="">
@@ -253,7 +316,6 @@
       </div>
     </article>
 
-    <!-- PRODUCT 2 -->
     <article class="product-card">
       <div class="product-img-wrapper">
         <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5" alt="">
@@ -265,7 +327,6 @@
       </div>
     </article>
 
-    <!-- PRODUCT 3 -->
     <article class="product-card">
       <div class="product-img-wrapper">
         <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="">
@@ -276,19 +337,32 @@
         <button class="btn-action">Select Options</button>
       </div>
     </article>
+
   </section>
 
-</main>
+  <!-- WORKSHOPS -->
+  <h2 style="margin-bottom:20px;">Upcoming Workshops</h2>
+  <section class="calendar-matrix-grid">
 
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('nav ul');
+    <div class="calendar-event-card">
+      <div class="event-date-badge">Saturday, October 10 — 10:00 AM</div>
+      <h3>3D Door Hanger Painting Masterclass</h3>
+      <p>All materials provided.</p>
+    </div>
 
-  toggle.addEventListener('click', () => {
-    const isOpen = navMenu.style.display === 'flex';
-    navMenu.style.display = isOpen ? 'none' : 'flex';
-  });
-</script>
+    <div class="calendar-event-card">
+      <div class="event-date-badge">Thursday, October 22 — 6:30 PM</div>
+      <h3>Tiered Tray Seasonal Layering Circle</h3>
+      <p>Learn Autumn color grouping techniques.</p>
+    </div>
 
-</body>
-</html>
+  </section>
+
+  <!-- BLOG -->
+  <h2 style="margin-bottom:20px;">From the Makery Journal</h2>
+  <section class="editorial-columns-grid">
+
+    <article class="editorial-story-card">
+      <div class="img-frame">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="">
+      </div>
