@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Line Upon Line — Shop All</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -17,10 +16,12 @@
       --cloud: #EFEAE6;
       --mist: #D0C9B8;
       --gravel: #998979;
-      --pebble: #C4AF9A;
       --ocean: #66767B;
       --forest: #5D6751;
       --white: #FFFFFF;
+      --dark-bg: #1f2428;
+      --dark-card: #2b3237;
+      --dark-text: #f3f3f3;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,15 +32,26 @@
       font-family: 'Darker Grotesque', sans-serif;
       font-size: 20px;
       line-height: 1.5;
+      transition: background 0.3s, color 0.3s;
     }
 
-    /* HEADER */
+    body.dark {
+      background-color: var(--dark-bg);
+      color: var(--dark-text);
+    }
+
     header {
       background: var(--white);
       border-bottom: 1px solid var(--mist);
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: background 0.3s;
+    }
+
+    body.dark header {
+      background: var(--dark-card);
+      border-bottom-color: #444;
     }
 
     .nav-container {
@@ -52,14 +64,12 @@
       gap: 20px;
     }
 
-    /* SMALL LOGO */
     .brand-logo-img {
       height: 40px;
       width: auto;
       object-fit: contain;
     }
 
-    /* SEARCH BAR */
     .search-bar {
       display: flex;
       align-items: center;
@@ -75,6 +85,13 @@
       border-radius: 4px;
       background: var(--cloud);
       font-size: 0.9rem;
+      transition: background 0.3s, border 0.3s;
+    }
+
+    body.dark .search-input {
+      background: var(--dark-card);
+      border-color: #555;
+      color: var(--dark-text);
     }
 
     .search-btn {
@@ -87,6 +104,12 @@
       font-family: 'Poppins', sans-serif;
       font-size: 0.8rem;
       text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .search-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     nav ul {
@@ -104,6 +127,11 @@
       letter-spacing: 0.06em;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
+      transition: color 0.2s, border 0.2s;
+    }
+
+    body.dark nav a {
+      color: var(--dark-text);
     }
 
     nav a:hover {
@@ -120,30 +148,64 @@
       cursor: pointer;
     }
 
-    /* MAIN WRAPPER */
+    .dark-toggle {
+      border: 1px solid var(--mist);
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      background: var(--cloud);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+
+    body.dark .dark-toggle {
+      background: var(--dark-card);
+      border-color: #555;
+      color: var(--dark-text);
+    }
+
     .wrap {
       max-width: 1280px;
       margin: auto;
       padding: 0 20px;
     }
 
-    /* FILTER BAR */
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-family: 'Bellefair', serif;
+    }
+
+    .sticky-filters {
+      position: sticky;
+      top: 70px;
+      z-index: 50;
+    }
+
     .utility-control-bar {
       background: var(--white);
       border: 1px solid var(--mist);
       padding: 16px;
       border-radius: 6px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
+      transition: background 0.3s, border 0.3s;
+    }
+
+    body.dark .utility-control-bar {
+      background: var(--dark-card);
+      border-color: #555;
     }
 
     .dropdown-cluster {
       display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .select-dropdown {
@@ -153,14 +215,49 @@
       border-radius: 4px;
       font-family: 'Poppins', sans-serif;
       font-size: 0.85rem;
+      transition: background 0.3s, border 0.3s, color 0.3s;
     }
 
-    /* PRODUCT GRID */
+    body.dark .select-dropdown {
+      background: var(--dark-card);
+      border-color: #555;
+      color: var(--dark-text);
+    }
+
+    .category-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cat-btn {
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--mist);
+      background: var(--cloud);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+    }
+
+    .cat-btn.active {
+      background: var(--rose);
+      color: var(--white);
+      border-color: var(--rose);
+    }
+
+    body.dark .cat-btn {
+      background: var(--dark-card);
+      border-color: #555;
+      color: var(--dark-text);
+    }
+
     .product-showcase-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
     .product-card {
@@ -169,11 +266,18 @@
       border-radius: 6px;
       overflow: hidden;
       transition: 0.2s;
+      cursor: pointer;
+      transform: translateY(0);
+    }
+
+    body.dark .product-card {
+      background: var(--dark-card);
+      border-color: #555;
     }
 
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 20px rgba(153, 137, 121, 0.1);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.12);
     }
 
     .product-img-wrapper {
@@ -188,64 +292,66 @@
     }
 
     .product-meta-content {
-      padding: 20px;
+      padding: 16px;
       text-align: center;
     }
 
     .product-meta-content h2 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
     }
 
     .product-price-label {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--rose);
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .btn-action {
       background: var(--ocean);
       color: var(--white);
       border: none;
-      padding: 12px;
+      padding: 10px;
       width: 100%;
       border-radius: 4px;
       cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      transition: background 0.2s;
     }
 
-    /* WORKSHOP GRID */
-    .calendar-matrix-grid {
+    .btn-action:hover {
+      background: var(--forest);
+    }
+
+    .calendar-matrix-grid,
+    .editorial-columns-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
-    .calendar-event-card {
-      background: var(--cloud);
-      border-left: 4px solid var(--rose);
-      padding: 20px;
-      border-radius: 6px;
-    }
-
-    /* BLOG GRID */
-    .editorial-columns-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-bottom: 60px;
-    }
-
+    .calendar-event-card,
     .editorial-story-card {
       background: var(--white);
-      border: 1px solid var(--mist);
       border-radius: 6px;
-      overflow: hidden;
+      border: 1px solid var(--mist);
+      padding: 16px;
+      transition: background 0.3s, border 0.3s;
+    }
+
+    body.dark .calendar-event-card,
+    body.dark .editorial-story-card {
+      background: var(--dark-card);
+      border-color: #555;
     }
 
     .editorial-story-card .img-frame {
-      height: 200px;
+      height: 180px;
       background: var(--mist);
+      margin-bottom: 10px;
     }
 
     .editorial-story-card img {
@@ -254,20 +360,161 @@
       object-fit: cover;
     }
 
-    /* FOOTER */
     footer {
       background: var(--forest);
       color: var(--cloud);
-      padding: 40px 20px;
-      margin-top: 60px;
-    }
-
-    footer p {
+      padding: 30px 20px;
+      margin-top: 40px;
       text-align: center;
       font-size: 0.9rem;
+      transition: background 0.3s;
     }
 
-    /* MOBILE FIXES */
+    body.dark footer {
+      background: #111;
+    }
+
+    /* CART DRAWER */
+    .cart-toggle {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: var(--rose);
+      color: var(--white);
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+      font-size: 1.2rem;
+      z-index: 200;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 320px;
+      height: 100vh;
+      background: var(--white);
+      border-left: 1px solid var(--mist);
+      box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+      transform: translateX(100%);
+      transition: transform 0.3s;
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.dark .cart-drawer {
+      background: var(--dark-card);
+      border-color: #555;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--mist);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      font-size: 0.95rem;
+    }
+
+    .cart-footer {
+      padding: 16px;
+      border-top: 1px solid var(--mist);
+    }
+
+    .checkout-btn {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+      background: var(--ocean);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+    }
+
+    /* PRODUCT DETAIL MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 180;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--white);
+      border-radius: 8px;
+      max-width: 480px;
+      width: 90%;
+      padding: 20px;
+      border: 1px solid var(--mist);
+    }
+
+    body.dark .modal-card {
+      background: var(--dark-card);
+      border-color: #555;
+      color: var(--dark-text);
+    }
+
+    .modal-card h2 {
+      margin-bottom: 8px;
+    }
+
+    .modal-card p {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .modal-btn {
+      padding: 8px 14px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .modal-btn.primary {
+      background: var(--ocean);
+      color: var(--white);
+    }
+
+    .modal-btn.secondary {
+      background: var(--mist);
+      color: var(--gravel);
+    }
+
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -278,6 +525,11 @@
         width: 100%;
       }
 
+      body.dark nav ul {
+        background: var(--dark-card);
+        border-color: #555;
+      }
+
       .menu-toggle {
         display: block;
       }
@@ -285,6 +537,10 @@
       .search-bar {
         order: 3;
         width: 100%;
+      }
+
+      .sticky-filters {
+        top: 120px;
       }
     }
   </style>
@@ -295,19 +551,18 @@
 <header>
   <div class="nav-container">
     <a href="#">
-      <!-- INSERT ANY LOGO FILE NAME HERE -->
-      <img src="Line Upon Line-13.png" class="brand-logo-img" alt="Line Upon Line Logo">
+      <img src="Line Upon Line-BLACK.png" class="brand-logo-img" alt="Line Upon Line Logo">
     </a>
 
     <div class="search-bar">
-      <input type="search" class="search-input" placeholder="Search products...">
-      <button class="search-btn">Search</button>
+      <input type="search" class="search-input" id="searchInput" placeholder="Search products...">
+      <button class="search-btn" id="searchBtn">Search</button>
     </div>
 
-    <button class="menu-toggle">&#9776;</button>
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
 
     <nav>
-      <ul>
+      <ul id="navMenu">
         <li><a href="#">Shop All</a></li>
         <li><a href="#">Workshops</a></li>
         <li><a href="#">Makery Box</a></li>
@@ -315,114 +570,70 @@
         <li><a href="#">Gift Cards</a></li>
       </ul>
     </nav>
+
+    <button class="dark-toggle" id="darkToggle">Dark Mode</button>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h1 style="text-align:center; margin:40px 0;">Shop All</h1>
+  <h1>Shop All</h1>
 
-  <!-- FILTER BAR -->
-  <div class="utility-control-bar">
-    <div class="dropdown-cluster">
-      <select class="select-dropdown">
-        <option>Filter By: All Products</option>
-        <option>Door Hangers</option>
-        <option>Tiered Tray Sets</option>
-        <option>Seasonal Items</option>
-      </select>
+  <div class="sticky-filters">
+    <div class="utility-control-bar">
+      <div class="dropdown-cluster">
+        <select class="select-dropdown" id="sortSelect">
+          <option value="default">Sort: Default</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+        </select>
+      </div>
 
-      <select class="select-dropdown">
-        <option>Sort By: Newest</option>
-        <option>Price: Low to High</option>
-        <option>Price: High to Low</option>
-        <option>Best Selling</option>
-      </select>
+      <div class="category-buttons">
+        <button class="cat-btn active" data-category="all">All</button>
+        <button class="cat-btn" data-category="door">Door Hangers</button>
+        <button class="cat-btn" data-category="tray">Tiered Tray Sets</button>
+        <button class="cat-btn" data-category="seasonal">Seasonal</button>
+      </div>
+
+      <div style="font-family:Poppins;" id="productCount">3 Products Displayed</div>
     </div>
-
-    <div style="font-family:Poppins;">3 Products Displayed</div>
   </div>
 
-  <!-- PRODUCT GRID -->
-  <section class="product-showcase-grid">
-
-    <article class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="">
-      </div>
-      <div class="product-meta-content">
-        <h2>Chubby 3D Easter Bunny</h2>
-        <div class="product-price-label">£28.00</div>
-        <button class="btn-action">Select Options</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5" alt="">
-      </div>
-      <div class="product-meta-content">
-        <h2>Easter Tiered Tray Set</h2>
-        <div class="product-price-label">£34.00</div>
-        <button class="btn-action">Select Options</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="product-img-wrapper">
-        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="">
-      </div>
-      <div class="product-meta-content">
-        <h2>Bubble Gum Machine Door Hanger</h2>
-        <div class="product-price-label">£42.00</div>
-        <button class="btn-action">Select Options</button>
-      </div>
-    </article>
-
+  <section class="product-showcase-grid" id="productGrid">
+    <!-- Products injected by JS -->
   </section>
 
-  <!-- WORKSHOPS -->
-  <h2 style="margin-bottom:20px;">Upcoming Workshops</h2>
+  <h2 style="margin-bottom:10px;">Upcoming Workshops</h2>
   <section class="calendar-matrix-grid">
-
     <div class="calendar-event-card">
       <div class="event-date-badge">Saturday, October 10 — 10:00 AM</div>
       <h3>3D Door Hanger Painting Masterclass</h3>
       <p>All materials provided.</p>
     </div>
-
     <div class="calendar-event-card">
       <div class="event-date-badge">Thursday, October 22 — 6:30 PM</div>
       <h3>Tiered Tray Seasonal Layering Circle</h3>
       <p>Learn Autumn color grouping techniques.</p>
     </div>
-
   </section>
 
-  <!-- BLOG -->
-  <h2 style="margin-bottom:20px;">From the Makery Journal</h2>
+  <h2 style="margin-bottom:10px;">From the Makery Journal</h2>
   <section class="editorial-columns-grid">
-
     <article class="editorial-story-card">
       <div class="img-frame">
         <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="">
       </div>
-      <div class="story-body" style="padding:20px;">
-        <h3>How to Style Your Front Porch</h3>
-        <p>Warm seasonal styling ideas.</p>
-      </div>
+      <h3>How to Style Your Front Porch</h3>
+      <p>Warm seasonal styling ideas.</p>
     </article>
-
     <article class="editorial-story-card">
       <div class="img-frame">
         <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5" alt="">
       </div>
-      <div class="story-body" style="padding:20px;">
-        <h3>3 Essential Painting Techniques</h3>
-        <p>Master crisp edges on 3D wood blanks.</p>
-      </div>
+      <h3>3 Essential Painting Techniques</h3>
+      <p>Master crisp edges on 3D wood blanks.</p>
     </article>
-
   </section>
 
 </main>
@@ -431,14 +642,239 @@
   <p>&copy; 2026 Line Upon Line Home Studio — Handcrafted Decor & Workshops</p>
 </footer>
 
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('nav ul');
+<button class="cart-toggle" id="cartToggle">🛒</button>
 
-  toggle.addEventListener('click', () => {
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <strong>Cart</strong>
+    <button id="closeCart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div style="margin-bottom:8px;">Total: <span id="cartTotal">£0.00</span></div>
+    <button class="checkout-btn" id="checkoutBtn">Checkout (Mock)</button>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal-card" id="modalCard">
+    <h2 id="modalTitle"></h2>
+    <p id="modalPrice"></p>
+    <p id="modalDesc"></p>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" id="modalClose">Close</button>
+      <button class="modal-btn primary" id="modalAddCart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const products = [
+    {
+      id: 1,
+      name: "Chubby 3D Easter Bunny",
+      price: 28.00,
+      category: "seasonal",
+      type: "door",
+      img: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38",
+      desc: "Handcrafted 3D bunny decor for Easter tiered trays or entry tables."
+    },
+    {
+      id: 2,
+      name: "Easter Tiered Tray Set",
+      price: 34.00,
+      category: "tray",
+      type: "seasonal",
+      img: "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+      desc: "Complete tiered tray kit with layered mini signs and seasonal accents."
+    },
+    {
+      id: 3,
+      name: "Bubble Gum Machine Door Hanger",
+      price: 42.00,
+      category: "door",
+      type: "all",
+      img: "https://images.unsplash.com/photo-1509440159596-0249088772ff",
+      desc: "Playful bubble gum machine door hanger for year-round fun."
+    }
+  ];
+
+  let filteredProducts = [...products];
+  let cart = [];
+  let currentProduct = null;
+
+  const productGrid = document.getElementById('productGrid');
+  const productCount = document.getElementById('productCount');
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const sortSelect = document.getElementById('sortSelect');
+  const catButtons = document.querySelectorAll('.cat-btn');
+
+  function renderProducts() {
+    productGrid.innerHTML = '';
+    filteredProducts.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'product-card';
+      card.dataset.id = p.id;
+      card.innerHTML = `
+        <div class="product-img-wrapper">
+          <img src="${p.img}" alt="${p.name}">
+        </div>
+        <div class="product-meta-content">
+          <h2>${p.name}</h2>
+          <div class="product-price-label">£${p.price.toFixed(2)}</div>
+          <button class="btn-action" data-id="${p.id}">Add to Cart</button>
+        </div>
+      `;
+      productGrid.appendChild(card);
+    });
+    productCount.textContent = `${filteredProducts.length} Products Displayed`;
+  }
+
+  function applySearch() {
+    const term = searchInput.value.toLowerCase();
+    filteredProducts = products.filter(p =>
+      p.name.toLowerCase().includes(term) ||
+      p.desc.toLowerCase().includes(term)
+    );
+    applySort();
+  }
+
+  function applyCategory(cat) {
+    if (cat === 'all') {
+      filteredProducts = [...products];
+    } else if (cat === 'door') {
+      filteredProducts = products.filter(p => p.category === 'door' || p.type === 'door');
+    } else if (cat === 'tray') {
+      filteredProducts = products.filter(p => p.category === 'tray');
+    } else if (cat === 'seasonal') {
+      filteredProducts = products.filter(p => p.category === 'seasonal');
+    }
+    applySort();
+  }
+
+  function applySort() {
+    const val = sortSelect.value;
+    if (val === 'priceLow') {
+      filteredProducts.sort((a,b) => a.price - b.price);
+    } else if (val === 'priceHigh') {
+      filteredProducts.sort((a,b) => b.price - a.price);
+    }
+    renderProducts();
+  }
+
+  searchBtn.addEventListener('click', applySearch);
+  searchInput.addEventListener('keyup', e => {
+    if (e.key === 'Enter') applySearch();
+  });
+
+  sortSelect.addEventListener('change', applySort);
+
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyCategory(btn.dataset.category);
+    });
+  });
+
+  productGrid.addEventListener('click', e => {
+    const id = e.target.dataset.id || e.target.closest('.product-card')?.dataset.id;
+    if (!id) return;
+    const product = products.find(p => p.id == id);
+    if (!product) return;
+
+    if (e.target.classList.contains('btn-action')) {
+      addToCart(product);
+    } else {
+      openModal(product);
+    }
+  });
+
+  const cartToggle = document.getElementById('cartToggle');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const closeCart = document.getElementById('closeCart');
+  const cartItems = document.getElementById('cartItems');
+  const cartTotal = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  cartToggle.addEventListener('click', () => {
+    cartDrawer.classList.add('open');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartDrawer.classList.remove('open');
+  });
+
+  function addToCart(product) {
+    const existing = cart.find(c => c.id === product.id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ ...product, qty: 1 });
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.qty;
+      const row = document.createElement('div');
+      row.style.marginBottom = '8px';
+      row.innerHTML = `
+        <strong>${item.name}</strong><br>
+        Qty: ${item.qty} &mdash; £${(item.price * item.qty).toFixed(2)}
+      `;
+      cartItems.appendChild(row);
+    });
+    cartTotal.textContent = `£${total.toFixed(2)}`;
+  }
+
+  checkoutBtn.addEventListener('click', () => {
+    alert('Checkout mock: this would lead to a payment page in a real shop.');
+  });
+
+  const modalBackdrop = document.getElementById('modalBackdrop');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalClose = document.getElementById('modalClose');
+  const modalAddCart = document.getElementById('modalAddCart');
+
+  function openModal(product) {
+    currentProduct = product;
+    modalTitle.textContent = product.name;
+    modalPrice.textContent = `£${product.price.toFixed(2)}`;
+    modalDesc.textContent = product.desc;
+    modalBackdrop.classList.add('open');
+  }
+
+  modalClose.addEventListener('click', () => {
+    modalBackdrop.classList.remove('open');
+  });
+
+  modalAddCart.addEventListener('click', () => {
+    if (currentProduct) addToCart(currentProduct);
+    modalBackdrop.classList.remove('open');
+  });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  menuToggle.addEventListener('click', () => {
     const isOpen = navMenu.style.display === 'flex';
     navMenu.style.display = isOpen ? 'none' : 'flex';
   });
+
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+
+  filteredProducts = [...products];
+  renderProducts();
 </script>
 
 </body>
