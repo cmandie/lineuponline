@@ -3,61 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line Upon Line, Co. - Custom Redesign Prototype</title>
+  <title>Line Upon Line, Co. - Complete Brand Reconstruction Prototype</title>
+  
+  <!-- Injecting Google Fonts specified in the Line Upon Line Brand Guidelines Font Stack -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@400;500;700&family=Libre+Baskerville:ital@1&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  
   <style>
+    /* ==========================================================================
+       LINE UPON LINE, CO. - OFFICIAL CONFIGURATION VARIABLE RECONSTRUCTION
+       ========================================================================== */
     :root {
-      --primary-serif: "Georgia", "Times New Roman", serif;
-      --secondary-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --bg-warm-linen: #FAF6F0;    
-      --text-charcoal: #1F2226;    
-      --accent-gold: #C5A059;      
+      /* Brand Color HEX Registry */
+      --color-peach: #F5DDCF;
+      --color-rose: #A87570;
+      --color-cloud: #EFEAE6;
+      --color-mist: #D0C9B8;
+      --color-gravel: #998979;
+      --color-pebble: #C4AF9A;
+      --color-sky: #CDD6D8;
+      --color-ocean: #66767B;
+      --color-forest: #5D6751;
+      
+      /* Base Structural Grounding Rules */
+      --text-charcoal: #1F2226;   /* Rich dark baseline for ADA AA Contrast (4.5:1+) */
+      --bg-canvas: #FAF9F6;       /* Warm linen baseline backdrop layout */
       --pure-white: #FFFFFF;
-      --border-tan: #EFEAE2;
+      
+      /* Typography Stack Registry */
+      --font-cta: 'Poppins', sans-serif;                /* POPPINS MEDIUM */
+      --font-title: 'Bellefair', serif;                 /* BELLEFAIR */
+      --font-heading: 'Garamond Premier Pro', 'EB Garamond', 'Georgia', serif; /* GARAMOND PREMIER PRO */
+      --font-paragraph: 'Darker Grotesque', sans-serif; /* DARKER GROTESQUE */
+      --font-italic: 'Libre Baskerville', serif;        /* LIBRE BASKERVILLE ITALICS */
     }
 
+    /* Base Formatting Defaults */
     body {
-      font-family: var(--secondary-sans);
+      font-family: var(--font-paragraph);
+      font-size: 1.3rem; 
+      line-height: 1.5;
       margin: 0;
       padding: 0;
       color: var(--text-charcoal);
-      background-color: var(--bg-warm-linen);
+      background-color: var(--bg-canvas);
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Accessible Header Layout */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      margin: 0 0 1rem 0;
+    }
+
+    p {
+      font-family: var(--font-paragraph);
+      font-weight: 400;
+      color: #3D4146;
+      margin-top: 0;
+    }
+
+    .brand-script {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: var(--color-rose);
+    }
+
+    /* ==========================================================================
+       UX PATTERNS - PERFECTLY CENTERED LOGO & NAVIGATION FRAMEWORK (ADA-READY)
+       ========================================================================== */
     .site-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.8rem 5%;
+      flex-direction: column; 
+      align-items: center;    
+      padding: 2.2rem 5% 1.5rem 5%;
       background-color: var(--pure-white);
-      border-bottom: 1px solid var(--border-tan);
+      border-bottom: 1px solid var(--color-cloud); /* Tone-on-Tone alignment bar */
+      gap: 1.8rem;            
+    }
+
+    .logo-container {
+      text-align: center;
+      width: 100%;
     }
 
     .logo {
-      font-family: var(--primary-serif);
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
+      font-family: var(--font-title);
+      font-size: 2.4rem;     
       text-transform: uppercase;
+      letter-spacing: 0.15em; 
+      color: var(--text-charcoal);
+      display: inline-block;
+    }
+
+    .nav-container {
+      width: 100%;
+      display: flex;
+      justify-content: center; 
     }
 
     .nav-menu {
       list-style: none;
       display: flex;
-      gap: 2.5rem;
+      gap: 3.5rem;              
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     .nav-menu a, .dropdown-trigger {
+      font-family: var(--font-cta);
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--text-charcoal);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
       background: none;
       border: none;
       cursor: pointer;
+      padding: 0.5rem 0;
     }
 
     .has-dropdown { position: relative; }
@@ -68,280 +134,221 @@
       left: 50%;
       transform: translateX(-50%);
       background: var(--pure-white);
-      box-shadow: 0px 10px 30px rgba(31, 34, 38, 0.08);
-      min-width: 260px;
+      box-shadow: 0px 12px 30px rgba(31, 34, 38, 0.06);
+      min-width: 280px;
       list-style: none;
       padding: 0.8rem 0;
       margin-top: 0.5rem;
       z-index: 10;
-      border-top: 2px solid var(--accent-gold);
+      border-top: 2px solid var(--color-pebble); /* Grounded asset marker border */
     }
 
     .dropdown-menu li a {
       display: block;
       padding: 0.8rem 1.5rem;
-      font-size: 0.9rem;
+      font-size: 1.15rem;
+      font-family: var(--font-paragraph);
+      text-transform: none;
+      letter-spacing: 0;
     }
 
     .dropdown-menu li a:hover, .dropdown-menu li a:focus {
-      background-color: #FAF8F5;
+      background-color: var(--color-cloud);
     }
 
     .has-dropdown.is-open .dropdown-menu { display: block; }
 
-    /* Core Layout Canvas */
+    /* ==========================================================================
+       GRID SYSTEM & STRUCTURAL CONTENT CONTAINER LAYOUT
+       ========================================================================== */
     .prototype-container {
       max-width: 1200px;
-      margin: 4rem auto;
+      margin: 5rem auto;
       padding: 0 5%;
     }
 
-    .intro-banner {
-      text-align: center;
-      margin-bottom: 5rem;
-      max-width: 750px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .intro-banner h1 {
-      font-family: var(--primary-serif);
-      font-weight: 400;
-      font-size: 2.8rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    .intro-banner p {
-      color: #5A5E66;
-      font-size: 1.15rem;
-      line-height: 1.6;
-    }
-
-    /* Clarifying Collection Card Architectures */
-    .collection-header {
-      font-family: var(--primary-serif);
-      font-size: 1.8rem;
-      font-weight: 400;
-      margin: 3rem 0 1.5rem 0;
-      border-bottom: 1px solid var(--accent-gold);
+    .section-divider {
+      font-family: var(--font-title);
+      font-size: 2.4rem;
+      border-bottom: 1px solid var(--color-mist);
       padding-bottom: 0.5rem;
+      margin: 6rem 0 2.5rem 0;
+      color: var(--color-gravel);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
+      gap: 3rem;
       margin-bottom: 4rem;
     }
 
     .product-card {
       background: var(--pure-white);
-      border: 1px solid var(--border-tan);
+      border: 1px solid var(--color-cloud);
       display: flex;
       flex-direction: column;
-      padding: 2rem;
-      border-radius: 2px;
+      padding: 2.2rem;
+      box-sizing: border-box;
     }
 
+    /* Grounded Tone-On-Tone Presentation Blocks */
     .book-cover-mock {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background-color: #F4EFEB;
-      border: 1px solid #EAE3D8;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       box-sizing: border-box;
+      border: 1px solid var(--color-mist);
     }
 
     .book-cover-mock span {
-      font-family: var(--primary-serif);
-      font-size: 1.3rem;
+      font-family: var(--font-title);
+      font-size: 1.8rem;
     }
 
     .meta-tag {
+      font-family: var(--font-cta);
       font-size: 0.75rem;
-      background: #EFEAE2;
-      padding: 0.2rem 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-top: 0.5rem;
-      font-weight: 600;
-    }
-
-    .feature-list {
-      margin: 1rem 0 2rem 0;
-      padding-left: 1.2rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #4A4E54;
-    }
-
-    .feature-list li {
-      margin-bottom: 0.4rem;
-    }
-
-    .color-swatch-box {
-      margin-bottom: 1.5rem;
-    }
-
-    .swatch-title {
-      font-size: 0.85rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      color: #6A6E75;
-    }
-
-    .swatch-row {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .swatch {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 1px solid #D0C9BC;
-      cursor: pointer;
-    }
-
-    /* Comparison matrix layout styling */
-    .comparison-section {
       background: var(--pure-white);
-      padding: 3rem 2rem;
-      border: 1px solid var(--border-tan);
-      margin-top: 6rem;
+      color: var(--text-charcoal);
+      padding: 0.3rem 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1rem;
+      border: 1px solid var(--color-pebble);
     }
 
-    .comparison-section h2 {
-      font-family: var(--primary-serif);
-      font-weight: 400;
-      text-align: center;
-      margin-bottom: 2rem;
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      margin: 0.5rem 0;
     }
 
-    .matrix-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      text-align: left;
+    .product-price {
+      font-family: var(--font-paragraph);
+      font-weight: 700;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--color-gravel);
     }
 
-    .matrix-table th, .matrix-table td {
-      padding: 1rem;
-      border-bottom: 1px solid var(--border-tan);
+    .spec-list {
+      padding-left: 1.2rem;
+      margin: 0 0 2rem 0;
+      font-size: 1.15rem;
+      color: #4A4E54;
+      line-height: 1.4;
     }
 
-    .matrix-table th {
-      font-family: var(--primary-serif);
-      font-weight: 600;
-      background-color: #FAF8F5;
+    .spec-list li { margin-bottom: 0.5rem; }
+
+    /* Color Selection Swatch Rows */
+    .swatch-box { margin-bottom: 2rem; }
+    .swatch-title {
+      font-family: var(--font-cta);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+      color: var(--color-gravel);
+    }
+    .swatch-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--color-mist);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+    .swatch:hover, .swatch:focus {
+      transform: scale(1.15);
+      outline: 2px solid var(--text-charcoal);
     }
 
+    /* System Operational Action Buttons (Poppins Medium) */
     .action-btn {
       width: 100%;
       background-color: var(--text-charcoal);
       color: var(--pure-white);
-      padding: 1rem;
-      border: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
+      font-family: var(--font-cta);
+      font-weight: 500;
+      padding: 1.1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      border: none;
       cursor: pointer;
       margin-top: auto;
+      transition: background-color 0.2s ease;
     }
 
     .action-btn:hover, .action-btn:focus {
-      background-color: #393E46;
+      background-color: var(--color-rose);
       outline: 3px solid #005a9c;
     }
 
-    @media (max-width: 768px) {
-      .site-header { flex-direction: column; gap: 1.5rem; text-align: center; }
-      .nav-menu { flex-direction: column; gap: 1rem; width: 100%; }
-      .dropdown-menu { position: relative; width: 100%; top: 0; left: 0; transform: none; }
-      .matrix-table { display: block; overflow-x: auto; }
+    /* ==========================================================================
+       SEO BLOG ARCHITECTURE CONTAINER
+       ========================================================================== */
+    .blog-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 3rem;
     }
-  </style>
-</head>
-<body>
 
-  <header class="site-header" role="banner">
-    <div class="logo">LINE UPON LINE, CO.</div>
-    <nav role="navigation" aria-label="Main Menu">
-      <ul class="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li class="has-dropdown">
-          <button aria-haspopup="true" aria-expanded="false" class="dropdown-trigger">Scriptures ▼</button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Journaling Editions</a></li>
-            <li><a href="#">Primary Editions</a></li>
-            <li><a href="#">Study Editions</a></li>
-          </ul>
-        </li>
-        <li class="has-dropdown">
-          <button aria-haspopup="true" aria-expanded="false" class="dropdown-trigger">Supplies ▼</button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Semi-Transparent Stickers (35 Packs)</a></li>
-            <li><a href="#">Scripture Tabs</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Study Blog</a></li>
-      </ul>
-    </nav>
-  </header>
+    .blog-post-card {
+      background-color: var(--pure-white);
+      border: 1px solid var(--color-cloud);
+      display: flex;
+      flex-direction: column;
+    }
 
-  <main class="prototype-container">
-    <div class="intro-banner">
-      <h1>Elevate Your Scriptural Study Layout</h1>
-      <p>A structured UX prototype resolving navigational catalog clutter. Designed with strict attention to material transparency, printing bindings, and historical collection depth.</p>
-    </div>
+    .blog-image-block {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: var(--color-cloud);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      color: var(--color-gravel);
+      border-bottom: 1px solid var(--color-cloud);
+    }
 
-    <!-- Collection 1 -->
-    <h2 class="collection-header">The Journaling Edition Collection</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <div class="book-cover-mock" style="background-color: #E3DCD5;">
-          <span>The Journaling Volume</span>
-          <div class="meta-tag">Smythe Sewn Lay-Flat</div>
-        </div>
-        <h3 class="product-title">Journaling Scripture Edition</h3>
-        <p style="color: #666; font-size: 0.9rem; margin: 0 0 1rem 0;">Our signature original canvas layout since May 2018.</p>
-        
-        <ul class="feature-list">
-          <li><strong>Generous Margins:</strong> Industry-leading 3-inch margins with no footnotes.</li>
-          <li><strong>Premium Stock:</strong> 70# paper optimised for writing & watercolor wash.</li>
-          <li><strong>Large Print:</strong> Perfect clarity configuration for low-vision readers.</li>
-          <li><strong>Personalisation:</strong> Optional laser stamp naming tracks (+$15).</li>
-        </ul>
+    .blog-content-block {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
 
-        <div class="color-swatch-box">
-          <div class="swatch-title">Select Canvas Linen Color</div>
-          <div class="swatch-row">
-            <div class="swatch" style="background-color: #E8C5C8;" title="Peony (Pink)"></div>
-            <div class="swatch" style="background-color: #2B3A4A;" title="Navy (Dark Blue)"></div>
-            <div class="swatch" style="background-color: #DCAE76;" title="Honey (Tan)"></div>
-            <div class="swatch" style="background-color: #C0C4C7;" title="Dove (Gray)"></div>
-            <div class="swatch" style="background-color: #5B82A1;" title="Ocean (Bright Blue)"></div>
-            <div class="swatch" style="background-color: #A3C1AD;" title="Seafoam (Light Green)"></div>
-          </div>
-        </div>
-        <button class="action-btn">Configure Edition</button>
-      </div>
-    </div>
+    .blog-meta-date {
+      font-family: var(--font-cta);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--color-gravel);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
 
-    <!-- Collection 2 -->
-    <h2 class="collection-header">The Primary Edition Collection</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <div class="book-cover-mock" style="background-color: #DFE4EC;">
-          <span>The Primary Volume</span>
+    .blog-title {
+      font-family: var(--font-heading);
+      font-size: 1.7rem;
+      margin: 0 0 1rem 0;
+      line-height: 1.2;
+    }
+
+    .blog-excerpt {
+      font-size: 1.15rem;
+      color: #555960;
+      line-height: 1.5;
