@@ -3,953 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line Upon Line — Shop All</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Darker+Grotesque:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@1,400&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-
+  <title>Line Upon Line, Co. - Redesign Prototype</title>
   <style>
-    :root {
-      --peach: #F5DDCF;
-      --rose: #A87570;
-      --cloud: #EFEAE6;
-      --mist: #D0C9B8;
-      --gravel: #998979;
-      --ocean: #66767B;
-      --forest: #5D6751;
-      --white: #FFFFFF;
-      --dark-bg: #1f2428;
-      --dark-card: #2b3237;
-      --dark-text: #f3f3f3;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    /* Global Typography & Accessible High-Contrast Colors */
     body {
-      background-color: var(--cloud);
-      color: var(--gravel);
-      font-family: 'Darker Grotesque', sans-serif;
-      font-size: 18px;
-      line-height: 1.5;
-      transition: background 0.3s, color 0.3s;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #1a1a1a;
+      background-color: #faf9f6; /* Clean off-white background */
     }
 
-    body.dark {
-      background-color: var(--dark-bg);
-      color: var(--dark-text);
-    }
-
-    img { max-width: 100%; height: auto; }
-
-    /* HEADER */
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--mist);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .brand-logo-img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex: 1 1 220px;
-      max-width: 360px;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid var(--mist);
-      border-radius: 4px;
-      background: var(--cloud);
-      font-size: 0.9rem;
-    }
-
-    .search-btn {
-      padding: 8px 12px;
-      background: var(--rose);
-      color: var(--white);
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--gravel);
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      padding-bottom: 3px;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav a:hover {
-      color: var(--rose);
-      border-bottom-color: var(--rose);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      color: var(--gravel);
-      cursor: pointer;
-    }
-
-    .dark-toggle {
-      border: 1px solid var(--mist);
-      border-radius: 20px;
-      padding: 6px 10px;
-      font-size: 0.8rem;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      background: var(--cloud);
-    }
-
-    .wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 16px 40px;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 24px 0 16px;
-      font-family: 'Bellefair', serif;
-      font-size: 2.2rem;
-    }
-
-    /* FILTER BAR */
-    .sticky-filters {
-      position: sticky;
-      top: 70px;
-      z-index: 50;
-    }
-
-    .utility-control-bar {
-      background: var(--white);
-      border: 1px solid var(--mist);
-      padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 24px;
+    /* Clean Navigation Bar */
+    .site-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      padding: 1rem 5%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
     }
 
-    .dropdown-cluster {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .select-dropdown {
-      background: var(--cloud);
-      border: 1px solid var(--mist);
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-    }
-
-    .category-buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .cat-btn {
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--mist);
-      background: var(--cloud);
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
-    .cat-btn.active {
-      background: var(--rose);
-      color: var(--white);
-      border-color: var(--rose);
-    }
-
-    /* PRODUCT GRID */
-    .product-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-bottom: 32px;
-    }
-
-    .product-card {
-      background: var(--white);
-      border: 1px solid var(--mist);
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-
-    .product-img-wrapper {
-      height: 220px;
-      background: var(--mist);
-    }
-
-    .product-meta-content {
-      padding: 12px;
-      text-align: center;
-    }
-
-    /* ⭐ MOBILE VISIBILITY FIX */
-    .product-meta-content h2 {
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-      color: #3a3a3a;
+    .logo {
+      font-size: 1.25rem;
       font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
-    .product-price-label {
-      font-size: 1rem;
-      color: var(--rose);
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .product-meta-content h2 {
-        color: #222 !important;
-      }
-      .product-price-label {
-        color: #A87570 !important;
-      }
-    }
-
-    body.dark .product-meta-content h2 {
-      color: var(--dark-text) !important;
-    }
-
-    body.dark .product-price-label {
-      color: var(--peach) !important;
-    }
-
-    /* BLOG SECTION */
-    .editorial-columns-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-      margin-bottom: 80px;
-    }
-
-    .editorial-story-card {
-      background: var(--white);
-      border-radius: 6px;
-      border: 1px solid var(--mist);
-      padding: 12px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .editorial-story-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-
-    .editorial-story-card .img-frame {
-      height: 200px;
-      overflow: hidden;
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-
-    .editorial-story-card .img-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .editorial-story-card h3 {
-      color: var(--gravel);
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
-
-    .editorial-story-card p {
-      color: var(--gravel);
-      font-size: 0.95rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--forest);
-      color: var(--cloud);
-      padding: 40px 20px;
-      margin-top: 60px;
-      clear: both;
-    }
-
-    .footer-links {
-      max-width: 1280px;
-      margin: 0 auto 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 32px;
-    }
-
-    .footer-column h4 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      margin-bottom: 12px;
-      color: var(--peach);
-    }
-
-    .footer-column ul {
+    .nav-menu {
       list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
       padding: 0;
     }
 
-    .footer-column li {
-      margin-bottom: 8px;
-    }
-
-    .footer-column a {
-      color: var(--cloud);
+    .nav-menu a, .dropdown-trigger {
+      color: #1a1a1a;
       text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .footer-column a:hover {
-      color: var(--peach);
-    }
-
-    .newsletter-box {
-      max-width: 1280px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-
-    .newsletter-box h4 {
-      color: var(--peach);
-      margin-bottom: 10px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .newsletter-box p {
-      margin-bottom: 12px;
-      font-size: 0.9rem;
-    }
-
-    .newsletter-form {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .newsletter-form input {
-      padding: 10px 14px;
-      border-radius: 4px;
-      border: 1px solid var(--mist);
-      width: 240px;
-    }
-
-    .newsletter-form button {
-      padding: 10px 16px;
-      background: var(--rose);
-      color: var(--white);
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.85rem;
-    }
-
-    .footer-social {
-      max-width: 1280px;
-      margin: 0 auto 20px;
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-    }
-
-    .social-icon {
-      color: var(--cloud);
+      font-weight: 500;
       font-size: 1rem;
-      text-decoration: none;
-    }
-
-    .footer-copy {
-      text-align: center;
-      font-size: 0.85rem;
-      border-top: 1px solid var(--gravel);
-      padding-top: 20px;
-    }
-
-    /* CART */
-    .cart-toggle {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      background: var(--rose);
-      color: var(--white);
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: none;
       border: none;
       cursor: pointer;
-      font-size: 1.1rem;
-      z-index: 200;
+      padding: 0.5rem 0;
     }
 
-    .cart-drawer {
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 320px;
-      max-width: 100%;
-      height: 100vh;
-      background: var(--white);
-      border-left: 1px solid var(--mist);
-      box-shadow: -4px 0 12px rgba(0,0,0,0.15);
-      transform: translateX(100%);
-      transition: transform 0.3s;
-      z-index: 150;
+    /* Accessible Dropdowns */
+    .has-dropdown { position: relative; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      min-width: 220px;
+      list-style: none;
+      padding: 0.5rem 0;
+      margin: 0;
+      z-index: 10;
+      border-radius: 4px;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.95rem;
+    }
+    .dropdown-menu li a:hover, .dropdown-menu li a:focus { background-color: #f5f5f5; }
+    .has-dropdown.is-open .dropdown-menu { display: block; }
+
+    /* Layout Wrapper */
+    .prototype-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 5%;
+    }
+
+    .intro-banner {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    /* Product Grid Layout */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border: 1px solid #e8e8e8;
       display: flex;
       flex-direction: column;
+      padding: 1.2rem;
     }
 
-    .cart-drawer.open { transform: translateX(0); }
-
-    .cart-header {
-      padding: 12px;
-      border-bottom: 1px solid var(--mist);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 12px;
-      font-size: 0.9rem;
-    }
-
-    .cart-footer {
-      padding: 12px;
-      border-top: 1px solid var(--mist);
-    }
-
-    .checkout-btn {
+    /* Placeholder Image Styling */
+    .image-placeholder {
       width: 100%;
-      padding: 8px;
-      border-radius: 4px;
-      border: none;
-      background: var(--ocean);
-      color: var(--white);
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
-
-    /* MODAL */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      display: none;
+      aspect-ratio: 1 / 1;
+      background-color: #e2e8f0;
+      display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 180;
-    }
-
-    .modal-backdrop.open { display: flex; }
-
-    .modal-card {
-      background: var(--white);
-      border-radius: 8px;
-      max-width: 420px;
-      width: 90%;
-      padding: 16px;
-      border: 1px solid var(--mist);
-    }
-
-    .modal-card h2 { margin-bottom: 6px; }
-    .modal-card p { margin-bottom: 6px; font-size: 0.9rem; }
-
-    .modal-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .modal-btn {
-      padding: 6px 10px;
+      color: #4a5568;
+      font-weight: 500;
       border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* ADA-Compliant Button (No Hidden AI) */
+    .action-btn {
+      width: 100%;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      padding: 0.8rem;
       border: none;
+      font-weight: bold;
+      border-radius: 4px;
       cursor: pointer;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
+      margin-top: auto;
+      text-align: center;
+    }
+    .action-btn:hover, .action-btn:focus {
+      background-color: #333333;
+      outline: 3px solid #005a9c; /* Blue high-visibility focus ring */
     }
 
-    .modal-btn.primary { background: var(--ocean); color: var(--white); }
-    .modal-btn.secondary { background: var(--mist); color: var(--gravel); }
+    /* Prototype Cart Drawer Overlay */
+    .cart-counter {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      margin-left: 0.3rem;
+    }
 
+    /* Mobile Responsive Tweak */
     @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: var(--white);
-        padding: 12px;
-        border: 1px solid var(--mist);
-        width: 100%;
-      }
-
-      .menu-toggle { display: block; }
-
-      .search-bar {
-        order: 3;
-        width: 100%;
-      }
-
-      .sticky-filters { top: 120px; }
-
-      .utility-control-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .product-img-wrapper { height: 180px; }
-      .cart-drawer { width: 100%; }
-      .modal-card { width: 95%; padding: 12px; }
+      .site-header { flex-direction: column; gap: 1rem; text-align: center; }
+      .nav-menu { flex-direction: column; gap: 0.5rem; width: 100%; }
+      .dropdown-menu { position: relative; box-shadow: none; width: 100%; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="nav-container">
-    <a href="#">
-      <img src="Line Upon Line-BLACK.png" class="brand-logo-img" alt="Line Upon Line Logo">
-    </a>
+  <!-- Navigation Prototype Panel -->
+  <header class="site-header" role="banner">
+    <div class="logo">LINE UPON LINE, CO. [PROTOTYPE]</div>
+    <nav role="navigation" aria-label="Main Menu">
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        
+        <!-- Interactive Dropdown 1 -->
+        <li class="has-dropdown">
+          <button aria-haspopup="true" aria-expanded="false" class="dropdown-trigger">
+            Scriptures ▼
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Book of Mormon Study Editions</a></li>
+            <li><a href="#">New Testament Study Editions</a></li>
+            <li><a href="#">Old Testament Study Editions</a></li>
+          </ul>
+        </li>
 
-    <div class="search-bar">
-      <input type="search" class="search-input" id="searchInput" placeholder="Search products...">
-      <button class="search-btn" id="searchBtn">Search</button>
-    </div>
+        <!-- Interactive Dropdown 2 -->
+        <li class="has-dropdown">
+          <button aria-haspopup="true" aria-expanded="false" class="dropdown-trigger">
+            Accessories ▼
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Scripture Tabs</a></li>
+            <li><a href="#">Stickers & Washi Tape</a></li>
+            <li><a href="#">Study Tote Bags</a></li>
+          </ul>
+        </li>
 
-    <button class="menu-toggle" id="menuToggle">&#9776;</button>
-
-    <nav>
-      <ul id="navMenu">
-        <li><a href="#">Shop All</a></li>
-        <li><a href="#">Workshops</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#">Study Blog (SEO)</a></li>
+        <li><a href="#" style="font-weight: bold;">Basket <span class="cart-counter" id="cart-count">0</span></a></li>
       </ul>
     </nav>
+  </header>
 
-    <button class="dark-toggle" id="darkToggle">Dark Mode</button>
-  </div>
-</header>
+  <!-- Main Showcase Container -->
+  <main class="prototype-container">
+    <div class="intro-banner">
+      <h1>Clean, Focused Visual Architecture</h1>
+      <p>A structured navigation system designed to prevent product catalog overwhelm.</p>
+    </div>
 
-<main class="wrap">
-
-  <h1>Shop All</h1>
-
-  <div class="sticky-filters">
-    <div class="utility-control-bar">
-      <div class="dropdown-cluster">
-        <select class="select-dropdown" id="sortSelect">
-          <option value="default">Sort: Default</option>
-          <option value="priceLow">Price: Low to High</option>
-          <option value="priceHigh">Price: High to Low</option>
-        </select>
+    <!-- Static Mockup Product Catalog Grid -->
+    <div class="product-grid">
+      
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <div class="image-placeholder">Study Edition Scripture Mockup</div>
+        <h2 class="product-title">Book of Mormon Study Edition</h2>
+        <p class="product-price">£32.00</p>
+        <button class="action-btn" onclick="addToCartMock()">Add to Basket</button>
       </div>
 
-      <div class="category-buttons">
-        <button class="cat-btn active" data-category="all">All</button>
-        <button class="cat-btn" data-category="door">Door Hangers</button>
-        <button class="cat-btn" data-category="tray">Tiered Tray Sets</button>
-        <button class="cat-btn" data-category="seasonal">Seasonal</button>
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <div class="image-placeholder">Sticker Pack Mockup</div>
+        <h2 class="product-title">New Testament Sticker Book</h2>
+        <p class="product-price">£12.00</p>
+        <button class="action-btn" onclick="addToCartMock()">Add to Basket</button>
       </div>
 
-      <div style="font-family:Poppins;font-size:0.85rem;" id="productCount">
-        3 Products Displayed
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <div class="image-placeholder">Scripture Tabs Mockup</div>
+        <h2 class="product-title">Gold Foil Scripture Tabs</h2>
+        <p class="product-price">£8.00</p>
+        <button class="action-btn" onclick="addToCartMock()">Add to Basket</button>
       </div>
+
     </div>
-  </div>
+  </main>
 
-  <section class="product-showcase-grid" id="productGrid">
-    <!-- Products will be inserted by JavaScript -->
-  </section>
-  <!-- WORKSHOPS -->
-  <h2>Upcoming Workshops</h2>
-  <section class="calendar-matrix-grid">
-    <div class="calendar-event-card">
-      <div class="event-date-badge">Saturday, October 10 — 10:00 AM</div>
-      <h3>3D Door Hanger Painting Masterclass</h3>
-      <p>All materials provided.</p>
-    </div>
-    <div class="calendar-event-card">
-      <div class="event-date-badge">Thursday, October 22 — 6:30 PM</div>
-      <h3>Tiered Tray Seasonal Layering Circle</h3>
-      <p>Learn Autumn color grouping techniques.</p>
-    </div>
-  </section>
+  <!-- Interactive Mockup Functional Scripts -->
+  <script>
+    // Handle Dropdown Cliks without any AI or complex plugins
+    document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        const parent = trigger.parentElement;
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Reset menus
+        document.querySelectorAll('.has-dropdown').forEach(item => item.classList.remove('is-open'));
+        document.querySelectorAll('.dropdown-trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
 
-  <!-- BLOG SECTION -->
-  <h2>From the Makery Journal</h2>
-  <section class="editorial-columns-grid">
-    <article class="editorial-story-card">
-      <div class="img-frame">
-        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="">
-      </div>
-      <h3>How to Style Your Front Porch</h3>
-      <p>Warm seasonal styling ideas.</p>
-    </article>
-
-    <article class="editorial-story-card">
-      <div class="img-frame">
-        <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5" alt="">
-      </div>
-      <h3>3 Essential Painting Techniques</h3>
-      <p>Master crisp edges on 3D wood blanks.</p>
-    </article>
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-links">
-    <div class="footer-column">
-      <h4>ABOUT</h4>
-      <ul>
-        <li><a href="about.html">Our Mission</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#">Returns & Shipping</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Terms Of Service</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Affiliates</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-column">
-      <h4>CONTACT</h4>
-      <ul>
-        <li><a href="#">Robert</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="newsletter-box">
-    <h4>Join Our Newsletter</h4>
-    <p>Get updates on new products, workshops, and seasonal releases.</p>
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-  <div class="footer-social">
-    <a href="#" class="social-icon">Instagram</a>
-    <a href="#" class="social-icon">Facebook</a>
-  </div>
-
-  <p class="footer-copy">
-    &copy; 2026 Line Upon Line Home Studio — Handcrafted Decor & Workshops
-  </p>
-</footer>
-
-<!-- CART BUTTON -->
-<button class="cart-toggle" id="cartToggle">🛒</button>
-
-<!-- CART DRAWER -->
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-header">
-    <strong>Cart</strong>
-    <button id="closeCart">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div class="cart-footer">
-    <div style="margin-bottom:6px;">Total: <span id="cartTotal">£0.00</span></div>
-    <button class="checkout-btn" id="checkoutBtn">Checkout (Mock)</button>
-  </div>
-</div>
-
-<!-- PRODUCT MODAL -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal-card" id="modalCard">
-    <h2 id="modalTitle"></h2>
-    <p id="modalPrice"></p>
-    <p id="modalDesc"></p>
-    <div class="modal-actions">
-      <button class="modal-btn secondary" id="modalClose">Close</button>
-      <button class="modal-btn primary" id="modalAddCart">Add to Cart</button>
-    </div>
-  </div>
-</div>
-
-<!-- JAVASCRIPT -->
-<script>
-  const products = [
-    {
-      id: 1,
-name: "Carrot Door Hanger",
-price: 28.00,
-category: "door",
-type: "all",
-img: "doorbanger.jpeg",
-desc: "This adorable 3D carrot is perfect for your door. Carrots are so much fun at Easter time for sure. It measures appoxametly 19\" tall. They are hand painted with stripes and polka-dots and ready to go!!!."
-
-    },
-    {
-      id: 2,
-      name: "Custom Last Name Door Mat",
-      price: 34.00,
-      category: "tray",
-      type: "seasonal",
-      img: "woodworkmat.jpeg",
-      desc: "Make your loved ones feel warm and welcome with our Custom Door Mat. Perfect for housewarmings, our mats can be personalized for a truly unique touch. Say goodbye to boring gifts and hello to a thoughtful and practical option for any closing celebration."
-    },
-    {
-      id: 3,
-      name: "There's Some Who's In This House",
-      price: 42.00,
-      category: "door",
-      type: "all",
-      img: "doorhanger.jpeg",
-      desc: "Who doesn't love the 'Green Guy' and the 'Who's'? This door hanger measures 18 inches around and comes pre-made."
-    }
-  ];
-
-  let filteredProducts = [...products];
-  let cart = [];
-  let currentProduct = null;
-
-  const productGrid = document.getElementById('productGrid');
-  const productCount = document.getElementById('productCount');
-  const searchInput = document.getElementById('searchInput');
-  const searchBtn = document.getElementById('searchBtn');
-  const sortSelect = document.getElementById('sortSelect');
-  const catButtons = document.querySelectorAll('.cat-btn');
-
-  function renderProducts() {
-    productGrid.innerHTML = '';
-    filteredProducts.forEach(p => {
-      const card = document.createElement('article');
-      card.className = 'product-card';
-      card.dataset.id = p.id;
-      card.innerHTML = `
-        <div class="product-img-wrapper">
-          <img src="${p.img}" alt="${p.name}">
-        </div>
-        <div class="product-meta-content">
-          <h2>${p.name}</h2>
-          <div class="product-price-label">£${p.price.toFixed(2)}</div>
-          <button class="btn-action" data-id="${p.id}">Add to Cart</button>
-        </div>
-      `;
-      productGrid.appendChild(card);
+        if (!isExpanded) {
+          parent.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+        e.stopPropagation();
+      });
     });
-    productCount.textContent = `${filteredProducts.length} Products Displayed`;
-  }
 
-  function applySearch() {
-    const term = searchInput.value.toLowerCase();
-    filteredProducts = products.filter(p =>
-      p.name.toLowerCase().includes(term) ||
-      p.desc.toLowerCase().includes(term)
-    );
-    applySort();
-  }
-
-  function applyCategory(cat) {
-    if (cat === 'all') {
-      filteredProducts = [...products];
-    } else if (cat === 'door') {
-      filteredProducts = products.filter(p => p.category === 'door' || p.type === 'door');
-    } else if (cat === 'tray') {
-      filteredProducts = products.filter(p => p.category === 'tray');
-    } else if (cat === 'seasonal') {
-      filteredProducts = products.filter(p => p.category === 'seasonal');
-    }
-    applySort();
-  }
-
-  function applySort() {
-    const val = sortSelect.value;
-    if (val === 'priceLow') {
-      filteredProducts.sort((a,b) => a.price - b.price);
-    } else if (val === 'priceHigh') {
-      filteredProducts.sort((a,b) => b.price - a.price);
-    }
-    renderProducts();
-  }
-
-  searchBtn.addEventListener('click', applySearch);
-  searchInput.addEventListener('keyup', e => {
-    if (e.key === 'Enter') applySearch();
-  });
-
-  sortSelect.addEventListener('change', applySort);
-
-  catButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      catButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      applyCategory(btn.dataset.category);
+    // Close menus if clicking outside
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.has-dropdown').forEach(item => item.classList.remove('is-open'));
     });
-  });
 
-  productGrid.addEventListener('click', e => {
-    const id = e.target.dataset.id || e.target.closest('.product-card')?.dataset.id;
-    if (!id) return;
-    const product = products.find(p => p.id == id);
-    if (!product) return;
-
-    if (e.target.classList.contains('btn-action')) {
-      addToCart(product);
-    } else {
-      openModal(product);
+    // Mock Basket Action to demonstrate functional layout responsiveness
+    let count = 0;
+    function addToCartMock() {
+      count++;
+      document.getElementById('cart-count').innerText = count;
+      alert("Item mock-added to Basket! Notice how the static page doesn't reload, preserving user accessibility.");
     }
-  });
-
-  const cartToggle = document.getElementById('cartToggle');
-  const cartDrawer = document.getElementById('cartDrawer');
-  const closeCart = document.getElementById('closeCart');
-  const cartItems = document.getElementById('cartItems');
-  const cartTotal = document.getElementById('cartTotal');
-  const checkoutBtn = document.getElementById('checkoutBtn');
-
-  cartToggle.addEventListener('click', () => {
-    cartDrawer.classList.add('open');
-  });
-
-  closeCart.addEventListener('click', () => {
-    cartDrawer.classList.remove('open');
-  });
-
-  function addToCart(product) {
-    const existing = cart.find(c => c.id === product.id);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ ...product, qty: 1 });
-    }
-    renderCart();
-  }
-
-  function renderCart() {
-    cartItems.innerHTML = '';
-    let total = 0;
-    cart.forEach(item => {
-      total += item.price * item.qty;
-      const row = document.createElement('div');
-      row.style.marginBottom = '6px';
-      row.innerHTML = `
-        <strong>${item.name}</strong><br>
-        Qty: ${item.qty} — £${(item.price * item.qty).toFixed(2)}
-      `;
-      cartItems.appendChild(row);
-    });
-    cartTotal.textContent = `£${total.toFixed(2)}`;
-  }
-
-  checkoutBtn.addEventListener('click', () => {
-    alert('Checkout mock: in a real shop this would go to payment.');
-  });
-
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalPrice = document.getElementById('modalPrice');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalClose = document.getElementById('modalClose');
-  const modalAddCart = document.getElementById('modalAddCart');
-
-  function openModal(product) {
-    currentProduct = product;
-    modalTitle.textContent = product.name;
-    modalPrice.textContent = `£${product.price.toFixed(2)}`;
-    modalDesc.textContent = product.desc;
-    modalBackdrop.classList.add('open');
-  }
-
-  modalClose.addEventListener('click', () => {
-    modalBackdrop.classList.remove('open');
-  });
-
-  modalAddCart.addEventListener('click', () => {
-    if (currentProduct) addToCart(currentProduct);
-    modalBackdrop.classList.remove('open');
-  });
-
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navMenu.style.display === 'flex';
-    navMenu.style.display = isOpen ? 'none' : 'flex';
-  });
-
-  const darkToggle = document.getElementById('darkToggle');
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-  });
-
-  filteredProducts = [...products];
-  renderProducts();
-</script>
-
+  </script>
 </body>
 </html>
