@@ -1,74 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Line Upon Line – Prototype Homepage</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-  body { font-family: Arial, sans-serif; margin:0; background:#FAF9F6; color:#1F2226; }
-  header { background:#FFFFFF; padding:20px; text-align:center; border-bottom:1px solid #EFEAE6; }
-  nav a { margin:0 15px; text-decoration:none; color:#1F2226; font-weight:bold; }
-  .hero { padding:60px 20px; text-align:center; background:#F5DDCF; }
-  .container { max-width:1200px; margin:auto; padding:40px 20px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-  .card { background:#FFFFFF; padding:20px; border:1px solid #EFEAE6; }
-  .card img { width:100%; height:250px; object-fit:cover; background:#D0C9B8; }
-  footer { text-align:center; padding:30px; background:#FFFFFF; border-top:1px solid #EFEAE6; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Upon Line Co — Homepage</title>
 </head>
 
 <body>
 
-<header>
-  <h1>LINE UPON LINE</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">About</a>
-    <a href="#">Blog</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <h2>Faith‑Centered Journals & Scripture Editions</h2>
-  <p>Designed with purpose. Built with quality. Loved by thousands.</p>
-</section>
-
-<section class="container">
-  <h2>Featured Products</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="INSERT-IMAGE-HERE.jpg" alt="Journaling Edition">
-      <h3>Journaling Edition</h3>
-      <p>Wide margins, linen covers, gold foil, and lay‑flat binding.</p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="/">Line Upon Line Co</a>
     </div>
 
-    <div class="card">
-      <img src="INSERT-IMAGE-HERE.jpg" alt="Weekly Journal">
-      <h3>Weekly Journal</h3>
-      <p>75 guided spreads for Sacrament & Second Hour.</p>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/collections/scriptures">Scriptures & Study Tools</a></li>
+        <li><a href="/collections/journals">Journals & Notebooks</a></li>
+        <li><a href="/collections/bags">Bags & Accessories</a></li>
+        <li><a href="/collections/gifts">Seasonal & Gifts</a></li>
+        <li><a href="/collections/all">All Products</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Faith-Inspired Tools for Worship & Study</h1>
+      <p>Beautiful, intentional products designed to help you make room for inspiration.</p>
+      <a href="/collections/new-arrivals" class="btn">Shop New Arrivals</a>
+    </div>
+  </section>
+
+
+  <!-- SHOP BY PURPOSE -->
+  <section class="shop-purpose">
+    <h2>Shop by Purpose</h2>
+    <div class="purpose-grid">
+      <a href="/collections/study" class="purpose-card">Study</a>
+      <a href="/collections/worship" class="purpose-card">Worship</a>
+      <a href="/collections/conference" class="purpose-card">Conference</a>
+      <a href="/collections/gifts" class="purpose-card">Gifts</a>
+    </div>
+  </section>
+
+
+  <!-- FEATURED COLLECTIONS -->
+  <section class="featured-collections">
+    <h2>Featured Collections</h2>
+    <div class="collection-grid">
+      <a href="/collections/scriptures" class="collection-card">Scriptures</a>
+      <a href="/collections/journals" class="collection-card">Journals</a>
+      <a href="/collections/bags" class="collection-card">Bags</a>
+      <a href="/collections/accessories" class="collection-card">Accessories</a>
+    </div>
+  </section>
+
+
+  <!-- BEST SELLERS -->
+  <section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="product-grid">
+      <!-- Placeholder cards for your prototype -->
+      <div class="product-card">
+        <div class="product-image"></div>
+        <h3>Product Name</h3>
+        <p>$00.00</p>
+        <a href="#" class="btn">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <h3>Product Name</h3>
+        <p>$00.00</p>
+        <a href="#" class="btn">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <h3>Product Name</h3>
+        <p>$00.00</p>
+        <a href="#" class="btn">View Product</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image"></div>
+        <h3>Product Name</h3>
+        <p>$00.00</p>
+        <a href="#" class="btn">View Product</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+      <blockquote>
+        “Beautiful products that elevate my scripture study.”
+        <cite>— Customer Name</cite>
+      </blockquote>
+
+      <blockquote>
+        “The quality is unmatched. I love everything I’ve purchased.”
+        <cite>— Customer Name</cite>
+      </blockquote>
+
+      <blockquote>
+        “Faith-centered and thoughtfully designed. Highly recommend!”
+        <cite>— Customer Name</cite>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- BLOG TEASER -->
+  <section class="blog-teaser">
+    <h2>From the Blog</h2>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <h3>How to Prepare for General Conference</h3>
+        <p>Simple ways to make your conference weekend more meaningful.</p>
+        <a href="#" class="btn">Read More</a>
+      </article>
+
+      <article class="blog-card">
+        <h3>Scripture Study Habits That Change Lives</h3>
+        <p>Daily practices that help you stay spiritually grounded.</p>
+        <a href="#" class="btn">Read More</a>
+      </article>
+
+      <article class="blog-card">
+        <h3>Faith-Based Journaling Tips</h3>
+        <p>How to use journaling as a tool for inspiration and reflection.</p>
+        <a href="#" class="btn">Read More</a>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-columns">
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="/collections/scriptures">Scriptures & Study Tools</a></li>
+          <li><a href="/collections/journals">Journals & Notebooks</a></li>
+          <li><a href="/collections/bags">Bags & Accessories</a></li>
+          <li><a href="/collections/gifts">Seasonal & Gifts</a></li>
+          <li><a href="/collections/all">All Products</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about.html">Our Story</a></li>
+          <li><a href="/workshops">Workshops</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/policies/shipping">Shipping & Returns</a></li>
+          <li><a href="/policies/terms">Terms of Service</a></li>
+          <li><a href="/policies/privacy">Privacy Policy</a></li>
+          <li><a href="/accessibility">Accessibility</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p>Join our newsletter for inspiration and updates.</p>
+        <form>
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <button type="submit">Join</button>
+        </form>
+        <p>Email: <a href="mailto:hello@lineuponlineco.com">hello@lineuponlineco.com</a></p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="INSERT-IMAGE-HERE.jpg" alt="Temple Record">
-      <h3>Temple Record Journal</h3>
-      <p>Reflect before and after every temple visit.</p>
+    <div class="footer-bottom">
+      <p>© 2026 Line Upon Line, Co. • Handmade with faith and purpose • Powered by Shopify</p>
     </div>
 
-    <div class="card">
-      <img src="INSERT-IMAGE-HERE.jpg" alt="The Quad">
-      <h3>The Quad</h3>
-      <p>Wide‑margin quad with gilded edges and 4 bookmarks.</p>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Line Upon Line</p>
-</footer>
+  </footer>
 
 </body>
 </html>
