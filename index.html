@@ -690,6 +690,10 @@
       .blog-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+      .nav-mobile {
+  display: none;
+}
+
 
       .footer-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -707,43 +711,49 @@
 </head>
 <body>
   <div class="page">
-    <header aria-label="Primary navigation">
-      <div class="header-inner container">
-        <div class="brand">
-          <div class="brand-logo" aria-hidden="true">LU</div>
-          <div class="brand-text">
-            <span class="brand-name">Line Upon Line</span>
-            <span class="brand-tagline">Faith-inspired study tools</span>
-          </div>
-        </div>
+   <header aria-label="Primary navigation">
+  <div class="header-inner container">
 
-        <nav class="nav-desktop" aria-label="Main menu">
-          <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
-          <a href="#" class="nav-link">Journals &amp; Notebooks</a>
-          <a href="#" class="nav-link">Bags &amp; Accessories</a>
-          <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
-          <a href="#" class="nav-link">About</a>
-          <a href="#" class="nav-link">Blog</a>
-          <a href="#" class="nav-link">All Products</a>
-          <button class="nav-cta" type="button">Shop New Arrivals</button>
-        </nav>
-
-        <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-          ☰
-        </button>
+    <!-- Brand -->
+    <div class="brand">
+      <div class="brand-logo" aria-hidden="true">LU</div>
+      <div class="brand-text">
+        <span class="brand-name">Line Upon Line</span>
+        <span class="brand-tagline">Faith-inspired study tools</span>
       </div>
+    </div>
 
-      <div class="nav-mobile container" aria-label="Mobile menu">
-        <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
-        <a href="#" class="nav-link">Journals &amp; Notebooks</a>
-        <a href="#" class="nav-link">Bags &amp; Accessories</a>
-        <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">All Products</a>
-        <button class="nav-cta" type="button">Shop New Arrivals</button>
-      </div>
-    </header>
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop" aria-label="Main menu">
+      <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+      <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+      <a href="#" class="nav-link">Bags &amp; Accessories</a>
+      <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Blog</a>
+      <a href="#" class="nav-link">All Products</a>
+      <button class="nav-cta" type="button">Shop New Arrivals</button>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation (hidden by default) -->
+  <div class="nav-mobile container" aria-label="Mobile menu">
+    <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+    <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+    <a href="#" class="nav-link">Bags &amp; Accessories</a>
+    <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+    <a href="#" class="nav-link">About</a>
+    <a href="#" class="nav-link">Blog</a>
+    <a href="#" class="nav-link">All Products</a>
+    <button class="nav-cta" type="button">Shop New Arrivals</button>
+  </div>
+</header>
 
     <main>
       <!-- Hero -->
