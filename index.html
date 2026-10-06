@@ -3,200 +3,976 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line Upon Line Co — Homepage</title>
+  <title>Line Upon Line – Faith-Inspired Study Tools</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Faith-inspired tools designed to deepen your worship and study. Shop scriptures, journals, bags, and gifts.">
+  <meta name="keywords" content="faith, scripture study, journals, bags, worship tools, Christian gifts">
+
+  <!-- Accessibility & semantics -->
+  <meta name="theme-color" content="#1f2933">
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --text: #111827;
+      --accent: #1f2933;
+      --accent-soft: #e5e7eb;
+      --highlight: #f97316;
+      --danger: #b91c1c;
+      --link: #2563eb;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius: 0.75rem;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover,
+    .nav-link--active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.9rem;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary:hover {
+      background: #111827;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--accent-soft);
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      border-radius: 1rem;
+      background: linear-gradient(135deg, #fef3c7, #e0f2fe);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-image-placeholder {
+      height: 180px;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-image-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section base */
+    .section {
+      padding: 1.75rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Shop by Purpose */
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .purpose-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .purpose-label {
+      font-weight: 600;
+    }
+
+    .purpose-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .purpose-link {
+      font-size: 0.85rem;
+      color: var(--link);
+      margin-top: 0.25rem;
+    }
+
+    /* Featured Collections */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .collection-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .collection-name {
+      font-weight: 600;
+    }
+
+    .collection-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Best Sellers */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .product-name {
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .product-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .product-actions {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Blog teaser */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .blog-title {
+      font-weight: 600;
+    }
+
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .blog-link {
+      font-size: 0.85rem;
+      color: var(--link);
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 2rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-links li + li {
+      margin-top: 0.25rem;
+    }
+
+    .footer-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .newsletter-input {
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      background: #111827;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+
+    .newsletter-input::placeholder {
+      color: #6b7280;
+    }
+
+    .newsletter-button {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: #f97316;
+      color: #111827;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .newsletter-button:hover {
+      background: #fb923c;
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .purpose-grid,
+      .collections-grid,
+      .products-grid,
+      .testimonials-grid,
+      .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+
+      nav {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-block;
+      }
+
+      .nav-mobile {
+        display: none;
+        flex-direction: column;
+        padding: 0.75rem 1.25rem 1rem;
+        border-top: 1px solid var(--border);
+        background: #ffffff;
+      }
+
+      .nav-mobile .nav-link {
+        padding: 0.4rem 0;
+        border-radius: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .purpose-grid,
+      .collections-grid,
+      .products-grid,
+      .testimonials-grid,
+      .blog-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Focus states */
+    button:focus,
+    a:focus,
+    input:focus {
+      outline: 2px solid var(--highlight);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page">
+    <header aria-label="Primary navigation">
+      <div class="header-inner container">
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true">LU</div>
+          <div class="brand-text">
+            <span class="brand-name">Line Upon Line</span>
+            <span class="brand-tagline">Faith-inspired study tools</span>
+          </div>
+        </div>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="logo">
-      <a href="/">Line Upon Line Co</a>
-    </div>
+        <nav class="nav-desktop" aria-label="Main menu">
+          <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+          <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+          <a href="#" class="nav-link">Bags &amp; Accessories</a>
+          <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+          <a href="#" class="nav-link">About</a>
+          <a href="#" class="nav-link">Blog</a>
+          <a href="#" class="nav-link">All Products</a>
+          <button class="nav-cta" type="button">Shop New Arrivals</button>
+        </nav>
 
-    <nav class="main-nav">
-  <ul>
-    <li><a href="collections.html">Collections</a></li>
-    <li><a href="product.html">Product</a></li>
-    <a href="about.html">About</a>
-
-    <li><a href="blog.html">Blog</a></li>
-  </ul>
-</nav>
-
-  </header>
-
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Faith-Inspired Tools for Worship & Study</h1>
-      <p>Beautiful, intentional products designed to help you make room for inspiration.</p>
-      <a href="/collections/new-arrivals" class="btn">Shop New Arrivals</a>
-    </div>
-  </section>
-
-
-  <!-- SHOP BY PURPOSE -->
-  <section class="shop-purpose">
-    <h2>Shop by Purpose</h2>
-    <div class="purpose-grid">
-      <a href="/collections/study" class="purpose-card">Study</a>
-      <a href="/collections/worship" class="purpose-card">Worship</a>
-      <a href="/collections/conference" class="purpose-card">Conference</a>
-      <a href="/collections/gifts" class="purpose-card">Gifts</a>
-    </div>
-  </section>
-
-
-  <!-- FEATURED COLLECTIONS -->
-  <section class="featured-collections">
-    <h2>Featured Collections</h2>
-    <div class="collection-grid">
-      <a href="/collections/scriptures" class="collection-card">Scriptures</a>
-      <a href="/collections/journals" class="collection-card">Journals</a>
-      <a href="/collections/bags" class="collection-card">Bags</a>
-      <a href="/collections/accessories" class="collection-card">Accessories</a>
-    </div>
-  </section>
-
-
-  <!-- BEST SELLERS -->
-  <section class="best-sellers">
-    <h2>Best Sellers</h2>
-    <div class="product-grid">
-      <!-- Placeholder cards for your prototype -->
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Product Name</h3>
-        <p>$00.00</p>
-        <a href="#" class="btn">View Product</a>
+        <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
       </div>
 
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Product Name</h3>
-        <p>$00.00</p>
-        <a href="#" class="btn">View Product</a>
+      <div class="nav-mobile container" aria-label="Mobile menu">
+        <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+        <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+        <a href="#" class="nav-link">Bags &amp; Accessories</a>
+        <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">All Products</a>
+        <button class="nav-cta" type="button">Shop New Arrivals</button>
       </div>
+    </header>
 
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Product Name</h3>
-        <p>$00.00</p>
-        <a href="#" class="btn">View Product</a>
+    <main>
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div>
+            <p class="hero-eyebrow">Faith-inspired tools</p>
+            <h1 id="hero-title" class="hero-title">
+              Faith-inspired tools designed to deepen your worship and study.
+            </h1>
+            <p class="hero-subtitle">
+              Thoughtful scriptures, journals, bags, and accessories created to help you prepare for conference,
+              stay present in worship, and build daily study habits that last.
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn-primary" type="button" aria-label="Shop new arrivals">
+                Shop New Arrivals
+              </button>
+              <button class="btn-secondary" type="button">
+                Browse All Products
+              </button>
+            </div>
+
+            <p class="hero-meta">
+              Free shipping over $75 · Designed with faith and function in mind.
+            </p>
+          </div>
+
+          <aside class="hero-image" aria-label="Lifestyle preview">
+            <div class="hero-image-placeholder" role="img" aria-label="Lifestyle image placeholder for study tools">
+              Lifestyle image area – scriptures, journals, and bags styled together.
+            </div>
+            <p class="hero-image-caption">
+              Replace this area with a high-resolution lifestyle photo that shows your products in real use:
+              conference prep, scripture study, or quiet worship moments.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Section 2: Shop by Purpose -->
+      <section class="section" aria-labelledby="purpose-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 id="purpose-title" class="section-title">Shop by Purpose</h2>
+              <p class="section-subtitle">
+                Find the right tools for how you worship, study, and prepare.
+              </p>
+            </div>
+          </div>
+
+          <div class="purpose-grid">
+            <article class="purpose-card">
+              <h3 class="purpose-label">Study</h3>
+              <p class="purpose-text">
+                Scripture marking tools, study journals, and layouts designed to help you go deeper—line upon line.
+              </p>
+              <a href="#" class="purpose-link">Shop study tools →</a>
+            </article>
+
+            <article class="purpose-card">
+              <h3 class="purpose-label">Worship</h3>
+              <p class="purpose-text">
+                Tools that keep you present in sacrament meeting, devotionals, and daily worship moments.
+              </p>
+              <a href="#" class="purpose-link">Shop worship tools →</a>
+            </article>
+
+            <article class="purpose-card">
+              <h3 class="purpose-label">Conference</h3>
+              <p class="purpose-text">
+                Bags, notebooks, and planners designed specifically for General Conference and other events.
+              </p>
+              <a href="#" class="purpose-link">Prepare for conference →</a>
+            </article>
+
+            <article class="purpose-card">
+              <h3 class="purpose-label">Gifts</h3>
+              <p class="purpose-text">
+                Thoughtful, faith-centered gifts for friends, family, and leaders—ready to wrap and share.
+              </p>
+              <a href="#" class="purpose-link">Shop gift ideas →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Featured Collections -->
+      <section class="section" aria-labelledby="collections-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 id="collections-title" class="section-title">Featured Collections</h2>
+              <p class="section-subtitle">
+                Explore the core product lines that anchor your catalog.
+              </p>
+            </div>
+          </div>
+
+          <div class="collections-grid">
+            <article class="collection-card">
+              <h3 class="collection-name">Scriptures &amp; Study Tools</h3>
+              <p class="collection-text">
+                Marking tools, tabs, and layouts that make scripture study more intentional and memorable.
+              </p>
+              <a href="#" class="purpose-link">View collection →</a>
+            </article>
+
+            <article class="collection-card">
+              <h3 class="collection-name">Journals &amp; Notebooks</h3>
+              <p class="collection-text">
+                Guided journals, conference notebooks, and everyday writing companions.
+              </p>
+              <a href="#" class="purpose-link">View collection →</a>
+            </article>
+
+            <article class="collection-card">
+              <h3 class="collection-name">Bags &amp; Accessories</h3>
+              <p class="collection-text">
+                Carry your study tools with purpose—conference bags, pouches, and accessories.
+              </p>
+              <a href="#" class="purpose-link">View collection →</a>
+            </article>
+
+            <article class="collection-card">
+              <h3 class="collection-name">Seasonal &amp; Gift Items</h3>
+              <p class="collection-text">
+                Limited releases and gift-ready sets for holidays, conferences, and special occasions.
+              </p>
+              <a href="#" class="purpose-link">View collection →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Best Sellers -->
+      <section class="section" aria-labelledby="bestsellers-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 id="bestsellers-title" class="section-title">Best Sellers</h2>
+              <p class="section-subtitle">
+                Customer favorites that consistently sell out—perfect starting points for new visitors.
+              </p>
+            </div>
+          </div>
+
+          <div class="products-grid" aria-label="Top-performing products">
+            <article class="product-card">
+              <h3 class="product-name">Conference Prep Journal</h3>
+              <p class="product-price">$32.00</p>
+              <p class="product-meta">Guided prompts, talk notes, and reflection pages for each session.</p>
+              <div class="product-actions">
+                <button class="btn-primary" type="button">Add to Cart</button>
+                <button class="btn-secondary" type="button">View Details</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <h3 class="product-name">Scripture Marking Kit</h3>
+              <p class="product-price">$24.00</p>
+              <p class="product-meta">Pens, tabs, and a simple system for color-coded study.</p>
+              <div class="product-actions">
+                <button class="btn-primary" type="button">Add to Cart</button>
+                <button class="btn-secondary" type="button">View Details</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <h3 class="product-name">Conference Tote Bag</h3>
+              <p class="product-price">$48.00</p>
+              <p class="product-meta">Designed to fit scriptures, notebooks, and essentials—without feeling bulky.</p>
+              <div class="product-actions">
+                <button class="btn-primary" type="button">Add to Cart</button>
+                <button class="btn-secondary" type="button">View Details</button>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <h3 class="product-name">Daily Worship Journal</h3>
+              <p class="product-price">$28.00</p>
+              <p class="product-meta">Short, simple prompts to keep worship present in everyday life.</p>
+              <div class="product-actions">
+                <button class="btn-primary" type="button">Add to Cart</button>
+                <button class="btn-secondary" type="button">View Details</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Testimonials -->
+      <section class="section" aria-labelledby="testimonials-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 id="testimonials-title" class="section-title">What Customers Are Saying</h2>
+              <p class="section-subtitle">
+                Real stories from people using these tools in their worship and study.
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonials-grid">
+            <article class="testimonial-card" aria-label="Customer testimonial">
+              <p class="testimonial-quote">
+                “My conference notes have never felt this organized. I actually go back and reread them now.”
+              </p>
+              <p class="testimonial-name">— Emily, Utah</p>
+            </article>
+
+            <article class="testimonial-card" aria-label="Customer testimonial">
+              <p class="testimonial-quote">
+                “The scripture marking kit helped me finally create a system that makes sense for me.”
+              </p>
+              <p class="testimonial-name">— James, Idaho</p>
+            </article>
+
+            <article class="testimonial-card" aria-label="Customer testimonial">
+              <p class="testimonial-quote">
+                “These tools feel both beautiful and deeply intentional. They’ve changed how I approach daily worship.”
+              </p>
+              <p class="testimonial-name">— Sarah, Arizona</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Blog Teaser -->
+      <section class="section" aria-labelledby="blog-title">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 id="blog-title" class="section-title">From the Blog</h2>
+              <p class="section-subtitle">
+                Practical, faith-centered guides to help you use your tools well.
+              </p>
+            </div>
+            <a href="#" class="purpose-link">View all posts →</a>
+          </div>
+
+          <div class="blog-grid">
+            <article class="blog-card">
+              <h3 class="blog-title">How to Prepare for General Conference</h3>
+              <p class="blog-excerpt">
+                Simple rhythms, tools, and prompts to help you arrive ready to listen—and ready to act.
+              </p>
+              <a href="#" class="blog-link">Read article →</a>
+            </article>
+
+            <article class="blog-card">
+              <h3 class="blog-title">Scripture Study Habits That Change Lives</h3>
+              <p class="blog-excerpt">
+                Small, consistent practices that turn study time into a daily anchor.
+              </p>
+              <a href="#" class="blog-link">Read article →</a>
+            </article>
+
+            <article class="blog-card">
+              <h3 class="blog-title">Faith-Based Journaling Tips</h3>
+              <p class="blog-excerpt">
+                How to use journaling as a way to remember, reflect, and recognize God’s hand.
+              </p>
+              <a href="#" class="blog-link">Read article →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Section 7: Footer -->
+    <footer aria-label="Site footer">
+      <div class="container">
+        <div class="footer-grid">
+          <section aria-labelledby="footer-about-title">
+            <h2 id="footer-about-title" class="footer-title">About Line Upon Line</h2>
+            <p class="footer-text">
+              Line Upon Line creates faith-inspired tools that help you prepare for conference, deepen your scripture
+              study, and stay present in worship. Every product is designed with both beauty and function in mind.
+            </p>
+          </section>
+
+          <section aria-labelledby="footer-links-title">
+            <h2 id="footer-links-title" class="footer-title">Quick Links</h2>
+            <ul class="footer-links">
+              <li><a href="#">Scriptures &amp; Study Tools</a></li>
+              <li><a href="#">Journals &amp; Notebooks</a></li>
+              <li><a href="#">Bags &amp; Accessories</a></li>
+              <li><a href="#">Seasonal &amp; Gift Items</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="footer-newsletter-title">
+            <h2 id="footer-newsletter-title" class="footer-title">Stay in the Loop</h2>
+            <p class="footer-text">
+              Be the first to know about new releases, conference collections, and study resources.
+            </p>
+            <form class="newsletter-form" aria-label="Newsletter signup">
+              <label for="newsletter-email" class="footer-text">Email address</label>
+              <input
+                id="newsletter-email"
+                class="newsletter-input"
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                aria-required="true"
+              >
+              <button class="newsletter-button" type="submit">
+                Sign up
+              </button>
+            </form>
+          </section>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span aria-label="Year">2024</span> Line Upon Line. All rights reserved.</span>
+          <span>Designed with accessibility, faith, and long-term growth in mind.</span>
+        </div>
       </div>
+    </footer>
+  </div>
 
-      <div class="product-card">
-        <div class="product-image"></div>
-        <h3>Product Name</h3>
-        <p>$00.00</p>
-        <a href="#" class="btn">View Product</a>
-      </div>
-    </div>
-  </section>
+  <script>
+    // Simple mobile nav toggle (ADA-friendly)
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navMobile = document.querySelector('.nav-mobile');
 
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-grid">
-      <blockquote>
-        “Beautiful products that elevate my scripture study.”
-        <cite>— Customer Name</cite>
-      </blockquote>
-
-      <blockquote>
-        “The quality is unmatched. I love everything I’ve purchased.”
-        <cite>— Customer Name</cite>
-      </blockquote>
-
-      <blockquote>
-        “Faith-centered and thoughtfully designed. Highly recommend!”
-        <cite>— Customer Name</cite>
-      </blockquote>
-    </div>
-  </section>
-
-
-  <!-- BLOG TEASER -->
-  <section class="blog-teaser">
-    <h2>From the Blog</h2>
-    <div class="blog-grid">
-      <article class="blog-card">
-        <h3>How to Prepare for General Conference</h3>
-        <p>Simple ways to make your conference weekend more meaningful.</p>
-        <a href="#" class="btn">Read More</a>
-      </article>
-
-      <article class="blog-card">
-        <h3>Scripture Study Habits That Change Lives</h3>
-        <p>Daily practices that help you stay spiritually grounded.</p>
-        <a href="#" class="btn">Read More</a>
-      </article>
-
-      <article class="blog-card">
-        <h3>Faith-Based Journaling Tips</h3>
-        <p>How to use journaling as a tool for inspiration and reflection.</p>
-        <a href="#" class="btn">Read More</a>
-      </article>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <div class="footer-columns">
-
-      <div class="footer-col">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="/collections/scriptures">Scriptures & Study Tools</a></li>
-          <li><a href="/collections/journals">Journals & Notebooks</a></li>
-          <li><a href="/collections/bags">Bags & Accessories</a></li>
-          <li><a href="/collections/gifts">Seasonal & Gifts</a></li>
-          <li><a href="/collections/all">All Products</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <ul>
-          <li><a href="/about.html">Our Story</a></li>
-          <li><a href="/workshops">Workshops</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="/policies/shipping">Shipping & Returns</a></li>
-          <li><a href="/policies/terms">Terms of Service</a></li>
-          <li><a href="/policies/privacy">Privacy Policy</a></li>
-          <li><a href="/accessibility">Accessibility</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <p>Join our newsletter for inspiration and updates.</p>
-        <form>
-          <input type="email" placeholder="Email address" aria-label="Email address">
-          <button type="submit">Join</button>
-        </form>
-        <p>Email: <a href="mailto:hello@lineuponlineco.com">hello@lineuponlineco.com</a></p>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Line Upon Line, Co. • Handmade with faith and purpose • Powered by Shopify</p>
-    </div>
-
-  </footer>
-
+    if (mobileToggle && navMobile) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = navMobile.style.display === 'flex';
+        navMobile.style.display = isOpen ? 'none' : 'flex';
+        mobileToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+  </script>
 </body>
 </html>
