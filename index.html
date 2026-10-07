@@ -194,10 +194,42 @@
   margin-top: 1rem;
 }
 
-/* Hide mobile menu on desktop */
+/* Default: desktop mode */
+.nav-desktop {
+  display: flex;
+}
+
 .nav-mobile {
   display: none;
 }
+
+/* Mobile mode */
+@media (max-width: 900px) {
+
+  /* Hide desktop menu on mobile */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Show hamburger toggle */
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Mobile menu hidden until toggle is clicked */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* When toggle is active */
+  .nav-mobile.active {
+    display: flex;
+  }
+}
+
 
 
     /* Hero */
