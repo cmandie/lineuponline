@@ -1,0 +1,185 @@
+/* ---------------- HEADER ---------------- */
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brand-tagline {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-link--active {
+  color: #000;
+  font-weight: 700;
+}
+
+.nav-cta {
+  background: #000;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+}
+
+/* Mobile Navigation */
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.hero-eyebrow {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #777;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #000;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-meta {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Hero Image */
+.hero-image-placeholder {
+  background: #ddd;
+  height: 300px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-image-caption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
