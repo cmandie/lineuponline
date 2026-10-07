@@ -643,13 +643,14 @@
     }
 /* Make the logo bigger */
 .brand-logo img {
-  width: 140px;   /* adjust size as you like */
+  width: 150px;
   height: auto;
 }
 
 /* Stack header vertically */
 .site-header .header-inner {
-  flex-direction: column;
+  display: flex;
+  flex-direction: column;   /* THIS stacks logo above nav */
   align-items: center;
   text-align: center;
   gap: 1rem;
@@ -662,12 +663,13 @@
   text-align: center;
 }
 
-/* Move nav below logo and center it */
+/* Center nav links and move them below logo */
 .nav-desktop {
   margin-top: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 
 /* Hide mobile menu by default */
 .nav-mobile {
