@@ -164,6 +164,43 @@
       font-size: 1.4rem;
       cursor: pointer;
     }
+    /* --- Shopify-style header override --- */
+
+/* Stack header vertically */
+.site-header .header-inner {
+  display: flex;
+  flex-direction: column;   /* STACKS logo above nav */
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+/* Make the logo bigger */
+.brand-logo img {
+  width: 140px;
+  height: auto;
+}
+
+/* Center brand text */
+.brand-text {
+  text-align: center;
+}
+
+/* Navigation below logo */
+.nav-desktop {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Hide mobile menu on desktop */
+.nav-mobile {
+  display: none;
+}
+
 
     /* Hero */
     .hero {
@@ -553,6 +590,7 @@
 
   </div>
 </section>
+    
 
     /* Footer */
     footer {
@@ -740,19 +778,22 @@
       outline-offset: 2px;
     }
   </style>
-<header aria-label="Primary navigation">
-  <div class="header-inner container header-stack">
+<header class="site-header" aria-label="Primary navigation">
+  <div class="header-inner container">
 
-    <!-- BIG Logo -->
-    <div class="brand brand-large">
-      <div class="brand-logo" aria-hidden="true">LU</div>
+    <!-- Logo + Brand -->
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="Line Upon Line-13.png" alt="Line Upon Line Logo">
+      </div>
+
       <div class="brand-text">
         <span class="brand-name">Line Upon Line</span>
         <span class="brand-tagline">Faith-inspired study tools</span>
       </div>
     </div>
 
-    <!-- Desktop Navigation BELOW the logo -->
+    <!-- Navigation below logo -->
     <nav class="nav-desktop" aria-label="Main menu">
       <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
       <a href="#" class="nav-link">Journals &amp; Notebooks</a>
@@ -783,6 +824,7 @@
     <button class="nav-cta" type="button">Shop New Arrivals</button>
   </div>
 </header>
+
 
 
 <main>
