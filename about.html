@@ -2,56 +2,899 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About – Line Upon Line</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Upon Line – Faith-Inspired Study Tools</title>
 
-  <!-- Shared styles from index -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <!-- Basic SEO -->
+  <meta name="description" content="Faith-inspired tools designed to deepen your worship and study. Shop scriptures, journals, bags, and gifts.">
+  <meta name="keywords" content="faith, scripture study, journals, bags, worship tools, Christian gifts">
 
-  <!-- Header (same structure as index) -->
-  <header class="site-header" aria-label="Primary navigation">
-    <div class="header-inner container">
+  <!-- Accessibility & semantics -->
+  <meta name="theme-color" content="#1f2933">
 
-      <!-- Logo only -->
-      <div class="brand">
-        <div class="brand-logo">
-          <img src="logo.png" alt="Line Upon Line Logo">
-        </div>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --text: #111827;
+      --accent: #1f2933;
+      --accent-soft: #e5e7eb;
+      --highlight: #f97316;
+      --danger: #b91c1c;
+      --link: #2563eb;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius: 0.75rem;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+/* Full-size image logo */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+.brand-logo img {
+  width: 700px;   /* adjust size here */
+  height: auto;
+  display: block;
+}
+
+
+
+    .brand-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover,
+    .nav-link--active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.9rem;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    /* --- Shopify-style header override --- */
+
+/* Stack header vertically */
+.site-header .header-inner {
+  display: flex;
+  flex-direction: column;   /* STACKS logo above nav */
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+/* Make the logo bigger */
+.brand-logo img {
+  width: 140px;
+  height: auto;
+}
+
+/* Center brand text */
+.brand-text {
+  text-align: center;
+}
+
+/* Navigation below logo */
+.nav-desktop {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Default: desktop mode */
+.nav-desktop {
+  display: flex;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+/* Mobile mode */
+@media (max-width: 900px) {
+
+  /* Hide desktop menu on mobile */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Show hamburger toggle */
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Mobile menu hidden until toggle is clicked */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* When toggle is active */
+  .nav-mobile.active {
+    display: flex;
+  }
+}
+
+
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary:hover {
+      background: #111827;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--accent-soft);
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      border-radius: 1rem;
+      background: linear-gradient(135deg, #fef3c7, #e0f2fe);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hero-image-placeholder {
+      height: 180px;
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero-image-caption {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section base */
+    .section {
+      padding: 1.75rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Shop by Purpose */
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .purpose-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .purpose-label {
+      font-weight: 600;
+    }
+
+    .purpose-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .purpose-link {
+      font-size: 0.85rem;
+      color: var(--link);
+      margin-top: 0.25rem;
+    }
+
+    /* Featured Collections */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .collection-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .collection-name {
+      font-weight: 600;
+    }
+
+    .collection-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Best Sellers */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .product-name {
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .product-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .product-actions {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Blog teaser */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .blog-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .blog-title {
+      font-weight: 600;
+    }
+
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .blog-link {
+      font-size: 0.85rem;
+      color: var(--link);
+      margin-top: 0.25rem;
+    }
+<!-- Section: Brand Colors & Fonts -->
+<section class="section" aria-labelledby="brand-title">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <h2 id="brand-title" class="section-title">Line Upon Line Brand Guide</h2>
+        <p class="section-subtitle">
+          Our signature color palette and font system used across all products and collections.
+        </p>
       </div>
+    </div>
 
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Main menu">
-        <a href="index.html#scriptures" class="nav-link">Scriptures &amp; Study Tools</a>
-        <a href="index.html#journals" class="nav-link">Journals &amp; Notebooks</a>
-        <a href="index.html#bags" class="nav-link">Bags &amp; Accessories</a>
-        <a href="index.html#seasonal" class="nav-link">Seasonal &amp; Gift Items</a>
-        <a href="about.html" class="nav-link nav-link--active">About</a>
-        <a href="index.html#blog" class="nav-link">Blog</a>
-        <a href="index.html#all-products" class="nav-link">All Products</a>
-        <a href="index.html#new-arrivals" class="nav-cta">Shop New Arrivals</a>
-      </nav>
+    <!-- Brand Colors -->
+    <div class="collections-grid">
 
-      <!-- Mobile Toggle -->
-      <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        ☰
-      </button>
+      <article class="collection-card">
+        <h3 class="collection-name">PEACH</h3>
+        <p class="collection-text">#F5DDCF</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">ROSE</h3>
+        <p class="collection-text">#A87570</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">CLOUD</h3>
+        <p class="collection-text">#EFEAE6</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">MIST</h3>
+        <p class="collection-text">#D0C9B8</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">GRAVEL</h3>
+        <p class="collection-text">#998979</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">PEBBLE</h3>
+        <p class="collection-text">#C4AF9A</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">SKY</h3>
+        <p class="collection-text">#CDD6D8</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">OCEAN</h3>
+        <p class="collection-text">#66767B</p>
+      </article>
+
+      <article class="collection-card">
+        <h3 class="collection-name">FOREST</h3>
+        <p class="collection-text">#5D6751</p>
+      </article>
 
     </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="nav-mobile container" aria-label="Mobile menu">
-      <a href="index.html#scriptures" class="nav-link">Scriptures &amp; Study Tools</a>
-      <a href="index.html#journals" class="nav-link">Journals &amp; Notebooks</a>
-      <a href="index.html#bags" class="nav-link">Bags &amp; Accessories</a>
-      <a href="index.html#seasonal" class="nav-link">Seasonal &amp; Gift Items</a>
-      <a href="about.html" class="nav-link nav-link--active">About</a>
-      <a href="index.html#blog" class="nav-link">Blog</a>
-      <a href="index.html#all-products" class="nav-link">All Products</a>
-      <a href="index.html#new-arrivals" class="nav-cta">Shop New Arrivals</a>
+    <!-- Brand Fonts -->
+    <div class="section-header" style="margin-top: 2rem;">
+      <div>
+        <h2 class="section-title">Brand Font Stack</h2>
+        <p class="section-subtitle">
+          The official typography system used across Line Upon Line products and marketing.
+        </p>
+      </div>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card">
+        <h3 class="product-name">Poppins Medium</h3>
+        <p class="product-meta">Menu / Call to Action Font</p>
+      </article>
+
+      <article class="product-card">
+        <h3 class="product-name">Bellefair</h3>
+        <p class="product-meta">Title Font</p>
+      </article>
+
+      <article class="product-card">
+        <h3 class="product-name">Garamond Premier Pro</h3>
+        <p class="product-meta">Heading Font</p>
+      </article>
+
+      <article class="product-card">
+        <h3 class="product-name">Darker Grotesque</h3>
+        <p class="product-meta">Paragraph Font</p>
+      </article>
+
+      <article class="product-card">
+        <h3 class="product-name">Libre Baskerville Italics</h3>
+        <p class="product-meta">Italics Font</p>
+      </article>
+
+      <article class="product-card">
+        <h3 class="product-name">Haute Couture Script</h3>
+        <p class="product-meta">Accent Script Font</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+    
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 2rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-links li + li {
+      margin-top: 0.25rem;
+    }
+
+    .footer-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .newsletter-input {
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #374151;
+      background: #111827;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+
+    .newsletter-input::placeholder {
+      color: #6b7280;
+    }
+
+    .newsletter-button {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: #f97316;
+      color: #111827;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .newsletter-button:hover {
+      background: #fb923c;
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+/* Make the logo bigger */
+.brand-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Stack header vertically */
+.site-header .header-inner {
+  display: flex;
+  flex-direction: column;   /* THIS stacks logo above nav */
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+/* Center brand text */
+.brand-text {
+  text-align: center;
+}
+
+/* Center nav links and move them below logo */
+.nav-desktop {
+  margin-top: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* Hide mobile menu by default */
+.nav-mobile {
+  display: none;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .purpose-grid,
+  .collections-grid,
+  .products-grid,
+  .testimonials-grid,
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: inline-block;
+  }
+
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    background: #ffffff;
+  }
+
+  .nav-mobile .nav-link {
+    padding: 0.4rem 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .purpose-grid,
+  .collections-grid,
+  .products-grid,
+  .testimonials-grid,
+  .blog-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+    /* Focus states */
+    button:focus,
+    a:focus,
+    input:focus {
+      outline: 2px solid var(--highlight);
+      outline-offset: 2px;
+    }
+  </style>
+<header class="site-header" aria-label="Primary navigation">
+  <div class="header-inner container">
+
+    <!-- Logo + Brand -->
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="Line Upon Line-25.png" alt="Line Upon Line Logo">
+      </div>
+
+      <div class="brand-text">
+        <span class="brand-name">Line Upon Line</span>
+        <span class="brand-tagline">Faith-inspired study tools</span>
+      </div>
+    </div>
+
+    <!-- Navigation below logo -->
+    <nav class="nav-desktop" aria-label="Main menu">
+      <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+      <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+      <a href="#" class="nav-link">Bags &amp; Accessories</a>
+      <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="#" class="nav-link">Blog</a>
+      <a href="#" class="nav-link">All Products</a>
+      <button class="nav-cta" type="button">Shop New Arrivals</button>
     </nav>
-  </header>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div class="nav-mobile container" aria-label="Mobile menu">
+    <a href="#" class="nav-link nav-link--active">Scriptures &amp; Study Tools</a>
+    <a href="#" class="nav-link">Journals &amp; Notebooks</a>
+    <a href="#" class="nav-link">Bags &amp; Accessories</a>
+    <a href="#" class="nav-link">Seasonal &amp; Gift Items</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="#" class="nav-link">Blog</a>
+    <a href="#" class="nav-link">All Products</a>
+    <button class="nav-cta" type="button">Shop New Arrivals</button>
+  </div>
+</header>
+
+
+
+<main>
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+
+        <h1 id="hero-title" class="hero-title">
+          Faith-inspired tools designed to deepen your worship and study.
+        </h1>
+
+        <p class="hero-subtitle">
+          Thoughtful scriptures, journals, bags, and accessories created to help you prepare for conference,
+          stay present in worship, and build daily study habits that last.
+        </p>
+
+        <div class="hero-cta-row">
+          <button class="btn-primary" type="button" aria-label="Shop new arrivals">
+            Shop New Arrivals
+          </button>
+          <button class="btn-secondary" type="button">
+            Browse All Products
+          </button>
+        </div>
+
+        <p class="hero-meta">
+          Free shipping over $75 · Designed with faith and function in mind.
+        </p>
+      </div>
+
+      <aside class="hero-image" aria-label="Lifestyle preview">
+        <div class="hero-image-placeholder" role="img" aria-label="Lifestyle image placeholder">
+          Lifestyle image area – scriptures, journals, and bags styled together.
+        </div>
+        <p class="hero-image-caption">
+          Team will replace this area with a high-resolution lifestyle photo showing Line Upon Line products in real use.
+        </p>
+      </aside>
+    </div>
+  </section>
 
   <!-- About Page Content -->
   <main>
