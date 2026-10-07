@@ -648,64 +648,58 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+  .purpose-grid,
+  .collections-grid,
+  .products-grid,
+  .testimonials-grid,
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-      .purpose-grid,
-      .collections-grid,
-      .products-grid,
-      .testimonials-grid,
-      .blog-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 
-      .footer-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      }
+  nav {
+    display: none;
+  }
 
-      nav {
-        display: none;
-      }
+  .mobile-toggle {
+    display: inline-block;
+  }
 
-      .mobile-toggle {
-        display: inline-block;
-      }
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    background: #ffffff;
+  }
 
-      .nav-mobile {
-        display: none;
-        flex-direction: column;
-        padding: 0.75rem 1.25rem 1rem;
-        border-top: 1px solid var(--border);
-        background: #ffffff;
-      }
-
-      .nav-mobile .nav-link {
-        padding: 0.4rem 0;
-        border-radius: 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .purpose-grid,
-      .collections-grid,
-      .products-grid,
-      .testimonials-grid,
-      .blog-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .nav-mobile {
-  display: none;
+  .nav-mobile .nav-link {
+    padding: 0.4rem 0;
+    border-radius: 0;
+  }
 }
 
+@media (max-width: 600px) {
+  .purpose-grid,
+  .collections-grid,
+  .products-grid,
+  .testimonials-grid,
+  .blog-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-      .footer-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+  .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 
     /* Focus states */
     button:focus,
